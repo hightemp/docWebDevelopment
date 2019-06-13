@@ -36,3 +36,4 @@ function extend(obj, src) {
 
 **********
 [javascript](/tags/javascript.md)
+[object](/tags/object.md)
