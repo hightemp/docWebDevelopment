@@ -62,7 +62,7 @@ export default {
 
 «Крепежные крючки»(mounting hooks) часто являются наиболее часто используемыми крючками, в лучшую или в худшую сторону. Они позволяют вам получить доступ к вашему компоненту непосредственно до и после первого рендера. Однако они не работают во время рендеринга на стороне сервера.
 
-Используйте if: Вам нужно получить доступ или изменить DOM вашего компонента непосредственно перед или после первоначального рендеринга.
+Используйте если: Вам нужно получить доступ или изменить DOM вашего компонента непосредственно перед или после первоначального рендеринга.
 
 **не** использовать, если: Вам нужно получить некоторые данные для вашего компонента при инициализации. Вместо этого используйте _created_ (или _created_ + _activation_ для _keep-alive_ компонентов) для этого, особенно если вам нужны эти данные во время рендеринга на стороне сервера.
 
@@ -84,13 +84,13 @@ export default {
 
 ### mounted
 
-In the_mounted_hook, you will have full access to the reactive component, templates, and rendered DOM (via. _this.$el_). Mounted is the most-often used lifecycle hook. The most frequently used patterns are fetching data for your component (use _created_ for this instead,) and modifying the DOM, often to integrate non-_Vue_ libraries.
+В ловушке _mounted_ у вас будет полный доступ к реактивному компоненту, шаблонам и отображаемому DOM (через. _this.$el_). Установленный - наиболее часто используемый крюк жизненного цикла. Наиболее часто используемые шаблоны - это выборка данных для вашего компонента (вместо этого используйте _created_) и изменение DOM, часто для интеграции не-_Vue_ библиотек.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
+```html
 <template>
   <p>I'm text inside the component.</p>
 </template>
@@ -105,24 +105,23 @@ export default {
 
 ```
 
-## [](https://alligator.io/vuejs/component-lifecycle/#updating-diff--re-render)Updating (Diff & Re-render)
+## Обновление (Diff & Re-render)
 
-_Updating hooks_are called whenever a reactive property used by your component changes, or something else causes it to re-render. They allow you to hook into the_watch-compute-render_ cycle for your component.
+_Updating hooks_ вызываются всякий раз, когда изменяется реактивное свойство, используемое вашим компонентом, или что-то еще вызывает его повторную визуализацию. Они позволяют вам подключиться к циклу _watch-compute-render_ для вашего компонента.
 
-Use if: You need to know when your component re-renders, perhaps for debugging or profiling.
+Используйте если: вам нужно знать, когда ваш компонент будет перерисован, возможно, для отладки или профилирования.
 
-Do **not** use if: You need to know when a reactive property on your component changes. Use [computed properties](https://alligator.io/vuejs/computed-properties/) or [watchers](https://vuejs.org/v2/api/#watch) for that instead.
+**не** используйте, если: Вам необходимо знать, когда изменяется реактивное свойство вашего компонента. Используйте для этого [вычисленные свойства](https://alligator.io/vuejs/computed-properties/) или [watchers](https://vuejs.org/v2/api/#watch).
 
 ### beforeUpdate
 
-The _beforeUpdate_ hook runs after data changes on your component and the update cycle begins, right before the DOM is patched and re-rendered. It allows you to get the new state of any reactive data on your component before it actually gets rendered.
+Хук _beforeUpdate_ запускается после изменения данных в вашем компоненте и запускается цикл обновления, непосредственно перед исправлением и повторной визуализацией DOM. Это позволяет вам получить новое состояние любых реактивных данных в вашем компоненте до того, как они будут фактически отображены.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -140,15 +139,13 @@ export default {
     }, 1000)
   }
 }
-</script>
-
 ```
 
 ### updated
 
-The_updated_hook runs after data changes on your component and the DOM re-renders. If you need to access the DOM after a property change, here is probably the safest place to do it.
+Хук _updated_ запускается после изменения данных в вашем компоненте и повторного рендеринга DOM. Если вам нужно получить доступ к DOM после изменения свойства, это, вероятно, самое безопасное место для этого.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
@@ -179,20 +176,19 @@ export default {
 
 ```
 
-## [](https://alligator.io/vuejs/component-lifecycle/#destruction-teardown)Destruction (Teardown)
+## Уничтожение (Разрушение)
 
-_Destruction hooks_ allow you to perform actions when your component is destroyed, such as cleanup or analytics sending. They fire when your component is being torn down and removed from the DOM.
+_Destruction hooks_ позволяет вам выполнять действия, когда ваш компонент уничтожен, такие как очистка или отправка аналитики. Они срабатывают, когда ваш компонент снят и удален из DOM.
 
 ### beforeDestroy
 
-_beforeDestroy_ is fired right before teardown. Your component will still be fully present and functional. If you need to cleanup events or reactive subscriptions,_beforeDestroy_ would probably be the time to do it.
+_beforeDestroy_ активирован прямо перед сносом. Ваш компонент по-прежнему будет полностью представлен и функционален. Если вам нужно очистить события или реактивные подписки, _beforeDestroy_, вероятно, самое время сделать это.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -207,20 +203,17 @@ export default {
     delete this.someLeakyProperty
   }
 }
-</script>
-
 ```
 
 ### destroyed
 
-By the time you reach the_destroyed_hook, there’s pretty much nothing left on your component. Everything that was attached to it has been destroyed. You might use the _destroyed_ hook to do any last-minute cleanup or inform a remote server that the component was destroyed like a sneaky snitch.`<_<`
+К тому времени, когда вы достигнете _destroyed_ хука, в вашем компоненте уже почти ничего не останется. Все, что было прикреплено к нему, было уничтожено. Вы можете использовать ловушку _destroyed_, чтобы выполнить очистку в последнюю минуту или сообщить удаленному серверу, что компонент был уничтожен, как хитрая стукачка. <_<
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 import MyCreepyAnalyticsService from './somewhere-bad'
 
 export default {
@@ -229,10 +222,8 @@ export default {
     MyCreepyAnalyticsService.informService('Component destroyed. All assets move in on target on my mark.')
   }
 }
-</script>
-
 ```
 
-## Other Hooks
+## Другие хуки
 
-There are two other hooks,_activated_ and _deactivated_. These are for _keep-alive_ components, a topic that is outside the scope of this article. Suffice it to say that they allow you to detect when a component that is wrapped in a _<keep-alive></keep-alive>_ tag is toggled on or off. You might use them to fetch data for your component or handle state changes, effectively behaving as _created_ and _beforeDestroy_ without the need to do a full component rebuild.
+Есть два других хука, _acactive_ и _deactivation_. Они предназначены для компонентов _keep-alive_, тема которых выходит за рамки данной статьи. Достаточно сказать, что они позволяют вам определять, когда компонент, включенный в тег _<keep-alive></ keep-alive>_, включен или выключен. Вы можете использовать их для извлечения данных для вашего компонента или обработки изменений состояния, фактически ведя себя как _created_ и _beforeDestroy_ без необходимости полной перестройки компонента.
