@@ -47,3 +47,55 @@ You could go on to use the value retrieved from `getData` elsewhere in your app.
 
 Before we get into this, I’d like to introduce you to an open source project that simplifies everything I’m about to show you. It’s called “clipboard.js” and it allows you to easily copy text to your clipboard. You may find it easier than doing this on your own. It’s quite a small library, and has a very simple API.
 
+But we’re here to learn, so lets look at how you can copy text to the user’s clipboard using only Web APIs.
+
+Since the `ClipboardEvent` object isn’t exposed in most browsers, we must go a different route. To accomplish this we’ll need to add to our tools, `document.execCommand()` . This will allow us to run a `copy` command that copies that current selection to the keyboard.
+
+Here’s an example shown with CodePen:
+
+```html
+<button onclick='copyText("Copied!")'>  Click me to copy!</button>
+```
+
+```javascript
+// This must be triggered by a user event.
+function copyText (text) {
+  // Create the textarea input to hold our text.
+  const element = document.createElement('textarea');
+  element.value = text;
+  // Add it to the document so that it can be focused.
+  document.body.appendChild(element);
+  // Focus on the element so that it can be copied.
+  element.focus();
+  element.setSelectionRange(0, element.value.length);
+  // Execute the copy command.
+  document.execCommand('copy');
+  // Remove the element to keep the document clear.
+  document.body.removeChild(element);
+}// This must be triggered by a user event.
+function copyText (text) {
+  // Create the textarea input to hold our text.
+  const element = document.createElement('textarea');
+  element.value = text;
+  // Add it to the document so that it can be focused.
+  document.body.appendChild(element);
+  // Focus on the element so that it can be copied.
+  element.focus();
+  element.setSelectionRange(0, element.value.length);
+  // Execute the copy command.
+  document.execCommand('copy');
+  // Remove the element to keep the document clear.
+  document.body.removeChild(element);
+}
+```
+
+This must be triggered by a user event, like a click. This is a safety feature implemented on important operations, such as opening the file upload window, copying to a clipboard, etc. It helps to keep users safe from websites interacting with their computer when they don’t them want to.
+
+A few notes:
+
+*   You can use either an `input` with the type attribute set to text, or a `textarea` . With the latter requiring one less line of code in order to create it.
+*   You may read that `document.execCommand` requires `designmode` , but as far as I can tell this is not true. It just needs to be triggered by a user initiated event.
+*   You probably want to wrap `document.execCommand` in a try/catch block. In some browsers it will throw an error on failures.
+*   You can inspect the result of `execCommand` to see if it worked or not. It returns a Boolean that relates to the success of the command.
+
+And that’s it! You’re now successfully copying text to your clipboard!
