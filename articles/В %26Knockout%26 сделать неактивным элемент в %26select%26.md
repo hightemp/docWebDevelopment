@@ -17,3 +17,6 @@
 ```
 
 Образец: [http://jsfiddle.net/rniemeyer/KxY44/](http://jsfiddle.net/rniemeyer/KxY44/)
+
+**********
+[javascript](/tags/javascript.md)
