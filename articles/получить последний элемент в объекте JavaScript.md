@@ -23,3 +23,4 @@ console.info(lastItem); //"carrot"
 
 **********
 [javascript](/tags/javascript.md)
+[object](/tags/object.md)
