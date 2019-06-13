@@ -14,7 +14,7 @@ Use creation hooks if you need to set things up in your component both during cl
 
 ### beforeCreate
 
-The_beforeCreate_hook runs at the very initialization of your component._data_has not been made reactive, and_events_have not been set up yet.
+The _beforeCreate_ hook runs at the very initialization of your component._data_ has not been made reactive, and_events_have not been set up yet.
 
 Example:
 
@@ -33,7 +33,7 @@ export default {
 
 ### created
 
-In the_created_hook, you will be able to access reactive_data_and_events_are active. Templates and Virtual DOM have not yet been mounted or rendered.
+In the_created_hook, you will be able to access reactive _data_ and _events_ are active. Templates and Virtual DOM have not yet been mounted or rendered.
 
 Example:
 
@@ -66,15 +66,15 @@ export default {
 
 ## [](https://alligator.io/vuejs/component-lifecycle/#mounting-dom-insertion)Mounting (DOM Insertion)
 
-_Mounting hooks_are often the most-used hooks, for better or worse. They allow you to access your component immediately before and after the first render. They do not, however, run during server-side rendering.
+_Mounting hooks_ are often the most-used hooks, for better or worse. They allow you to access your component immediately before and after the first render. They do not, however, run during server-side rendering.
 
 Use if: You need to access or modify the DOM of your component immediately before or after the initial render.
 
-Do**not**use if: You need to fetch some data for your component on initialization. Use_created_(or_created_+_activated_for_keep-alive_components) for this instead, especially if you need that data during server-side rendering.
+Do **not** use if: You need to fetch some data for your component on initialization. Use _created_(or _created_ + _activated_ for _keep-alive_ components) for this instead, especially if you need that data during server-side rendering.
 
 ### beforeMount
 
-The_beforeMount_hook runs right before the initial render happens and after the template or render functions have been compiled. Most likely you’ll never need to use this hook. Remember, it doesn’t get called when doing server-side rendering.
+The _beforeMount_ hook runs right before the initial render happens and after the template or render functions have been compiled. Most likely you’ll never need to use this hook. Remember, it doesn’t get called when doing server-side rendering.
 
 Example:
 
@@ -93,7 +93,7 @@ export default {
 
 ### mounted
 
-In the_mounted_hook, you will have full access to the reactive component, templates, and rendered DOM (via._this.$el_). Mounted is the most-often used lifecycle hook. The most frequently used patterns are fetching data for your component (use_created_for this instead,) and modifying the DOM, often to integrate non-_Vue_libraries.
+In the_mounted_hook, you will have full access to the reactive component, templates, and rendered DOM (via. _this.$el_). Mounted is the most-often used lifecycle hook. The most frequently used patterns are fetching data for your component (use _created_ for this instead,) and modifying the DOM, often to integrate non-_Vue_ libraries.
 
 Example:
 
@@ -116,15 +116,15 @@ export default {
 
 ## [](https://alligator.io/vuejs/component-lifecycle/#updating-diff--re-render)Updating (Diff & Re-render)
 
-_Updating hooks_are called whenever a reactive property used by your component changes, or something else causes it to re-render. They allow you to hook into the_watch-compute-render_cycle for your component.
+_Updating hooks_are called whenever a reactive property used by your component changes, or something else causes it to re-render. They allow you to hook into the_watch-compute-render_ cycle for your component.
 
 Use if: You need to know when your component re-renders, perhaps for debugging or profiling.
 
-Do**not**use if: You need to know when a reactive property on your component changes. Use[computed properties](https://alligator.io/vuejs/computed-properties/)or[watchers](https://vuejs.org/v2/api/#watch)for that instead.
+Do **not** use if: You need to know when a reactive property on your component changes. Use [computed properties](https://alligator.io/vuejs/computed-properties/) or [watchers](https://vuejs.org/v2/api/#watch) for that instead.
 
 ### beforeUpdate
 
-The_beforeUpdate_hook runs after data changes on your component and the update cycle begins, right before the DOM is patched and re-rendered. It allows you to get the new state of any reactive data on your component before it actually gets rendered.
+The _beforeUpdate_ hook runs after data changes on your component and the update cycle begins, right before the DOM is patched and re-rendered. It allows you to get the new state of any reactive data on your component before it actually gets rendered.
 
 Example:
 
@@ -190,11 +190,11 @@ export default {
 
 ## [](https://alligator.io/vuejs/component-lifecycle/#destruction-teardown)Destruction (Teardown)
 
-_Destruction hooks_allow you to perform actions when your component is destroyed, such as cleanup or analytics sending. They fire when your component is being torn down and removed from the DOM.
+_Destruction hooks_ allow you to perform actions when your component is destroyed, such as cleanup or analytics sending. They fire when your component is being torn down and removed from the DOM.
 
 ### beforeDestroy
 
-_beforeDestroy_is fired right before teardown. Your component will still be fully present and functional. If you need to cleanup events or reactive subscriptions,_beforeDestroy_would probably be the time to do it.
+_beforeDestroy_ is fired right before teardown. Your component will still be fully present and functional. If you need to cleanup events or reactive subscriptions,_beforeDestroy_ would probably be the time to do it.
 
 Example:
 
@@ -222,7 +222,7 @@ export default {
 
 ### destroyed
 
-By the time you reach the_destroyed_hook, there’s pretty much nothing left on your component. Everything that was attached to it has been destroyed. You might use the_destroyed_hook to do any last-minute cleanup or inform a remote server that the component was destroyed like a sneaky snitch.`<_<`
+By the time you reach the_destroyed_hook, there’s pretty much nothing left on your component. Everything that was attached to it has been destroyed. You might use the _destroyed_ hook to do any last-minute cleanup or inform a remote server that the component was destroyed like a sneaky snitch.`<_<`
 
 Example:
 
@@ -241,3 +241,7 @@ export default {
 </script>
 
 ```
+
+## Other Hooks
+
+There are two other hooks,_activated_ and _deactivated_. These are for _keep-alive_ components, a topic that is outside the scope of this article. Suffice it to say that they allow you to detect when a component that is wrapped in a _<keep-alive></keep-alive>_ tag is toggled on or off. You might use them to fetch data for your component or handle state changes, effectively behaving as _created_ and _beforeDestroy_ without the need to do a full component rebuild.
