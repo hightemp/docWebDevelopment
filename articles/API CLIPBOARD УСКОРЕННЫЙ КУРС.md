@@ -79,26 +79,26 @@ document.addEventListener('paste', event => {
 });
 ```
 
-A user's paste action triggers a [ClipboardEvent](https://www.w3.org/TR/clipboard-apis/#clipboardeventinit-clipboarddata). On the event you have access to theclipboardDataproperty, which is a [DataTransfer](https://html.spec.whatwg.org/multipage/dnd.html#datatransfer)object. CallinggetData()with the proper format returns the copied text. Okay, I'm sorry. That was a lot of spec links.
+Действие вставки пользователя вызывает [ClipboardEvent](https://www.w3.org/TR/clipboard-apis/#clipboardeventinit-clipboarddata). В случае события у вас есть доступ к объекту clipboardDataproperty, который является объектом [DataTransfer](https://html.spec.whatwg.org/multipage/dnd.html#datatransfer). CallinggetData() с правильным форматом возвращает скопированный текст. Хорошо, извини. Это было много ссылок на спецификации.
 
-This is great because you don't have ungranted access to the user's Clipboard. A user must issue the paste. However, there's a potential problem. The call togetData()is synchronous.
+Это здорово, потому что у вас нет незарегистрированного доступа к буферу обмена пользователя. Пользователь должен сделать вставку. Тем не менее, есть потенциальная проблема. Вызов getData() является синхронным.
 
-This poses a problem for you, the developer. What if they paste a massive base64-encoded image? Or some other insanely large amount of data? What if you do intense processing on this pasted data? This could block the main thread of the page, effectively freezing the page for your user.
+Это создает проблему для вас, разработчика. Что если они вставят массивное изображение в кодировке base64? Или какой-то другой безумно большой объем данных? Что делать, если вы интенсивно обрабатываете эти вставленные данные? Это может заблокировать основную ветку страницы, фактически заморозив страницу для вашего пользователя.
 
-Fortunately there's an up and coming solution. It's an entirely new way to read and write data from the Clipboard.
+К счастью, есть перспективное решение. Это совершенно новый способ чтения и записи данных из буфера обмена.
 
-### The Async Clipboard API
+### API-интерфейс буфера обмена Async(The Async Clipboard API)
 
-This new API has several improvements over our old frienddocument.execCommand('copy').
+Этот новый API имеет несколько улучшений по сравнению с нашим старым другом document.execCommand('copy').
 
-*   Individual commands for reading and writing from the Clipboard.
-*   Async promise-based access to the Clipboard.
-*   Permission based. The user must grant permission.
-*   Doesn't require a user event to trigger.
+* Отдельные команды для чтения и записи из буфера обмена.
+* Асинхронный доступ на основе обещаний к буферу обмена.
+* Разрешение на основе. Пользователь должен предоставить разрешение.
+* Не требует пользовательского события для запуска.
 
-**Note:**This is Chrome only so far. This API is subject to change.
+**Примечание:** Пока это только Chrome. Этот API может быть изменен.
 
-This new API is available on the Navigator object:navigator.clipboard
+Этот новый API доступен в объекте Navigator: navigator.clipboard
 
 index.js
 
