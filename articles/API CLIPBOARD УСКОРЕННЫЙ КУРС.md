@@ -108,9 +108,9 @@ navigator.clipboard.writeText('whatever you need to copy').then(() => {
 });
 ```
 
-The user is prompted to grant permission when you issue this command for the first time. Since this API is asynchronous the main thread is clear while we wait for the user's permission. If the API were synchronous, we'd be screwed.
+Пользователю предлагается предоставить разрешение при первом запуске этой команды. Поскольку этот API асинхронный, основной поток понятен, пока мы ждем разрешения пользователя. Если бы API был синхронным, мы бы облажались.
 
-To read from the Clipboard usereadText():
+Для чтения из буфера обмена используйте readText():
 
 index.js
 
@@ -120,7 +120,7 @@ navigator.clipboard.readText().then(text => {
 });
 ```
 
-Just like before, if it's the first time then the user must grant permission before you can access the Clipboard. Remember, the Clipboard value is hard to trust and the data can be sensitive. It's still a good idea to ask the user to paste in a value where necessary.
+Как и раньше, если это первый раз, пользователь должен предоставить разрешение, прежде чем вы сможете получить доступ к буферу обмена. Помните, что значению буфера обмена трудно доверять, и данные могут быть конфиденциальными. Это все еще хорошая идея, чтобы попросить пользователя вставить значение в случае необходимости.
 
 index.js
 
@@ -131,7 +131,7 @@ document.addEventListener('paste', async event => {
 });
 ```
 
-This example is a big improvement over the synchronousgetData()transfer method. The user must grant permission and you have async access. You're better protected against a large amount of text and it's easier to do more intensive processing on the pasted text.
+Этот пример является большим улучшением по сравнению с синхронным методом передачи getData(). Пользователь должен предоставить разрешение, и у вас есть асинхронный доступ. Вы лучше защищены от большого количества текста, и легче выполнять более интенсивную обработку вставленного текста.
 
 ### Only the active tab has access to the clipboard
 
