@@ -135,9 +135,9 @@ document.addEventListener('paste', async event => {
 
 ### Only the active tab has access to the clipboard
 
-Users keep tabs open forever. Having unfettered access to the keyboard is still a bad idea. You could openexample.comin a tab and leave it there for a week._Don't act like you haven't had a tab open for a week._During that time you'll have all sorts of data go in and out of your Clipboard. What ifexample.compolled thenavigator.clipboard.readText()method? That would be mighty dangerous, but there's a safeguard.
+Пользователи держат вкладки открытыми навсегда. Свободный доступ к клавиатуре все еще плохая идея. Вы можете открыть example.com на вкладке и оставить там на неделю. _Не ведите себя так, будто у вас не было открытой вкладки в течение недели._ В течение этого времени вы будете получать и отправлять все виды данных из буфера обмена. Что если example.com опрашивает метод navigator.clipboard.readText()? Это было бы очень опасно, но есть гарантия.
 
-Your site no longer has access to the Clipboard when the user switches to another tab. This is a great precaution, but it comes with an annoying debugging problem. When you open up the DevTools in Chrome, the DevTools itself becomes the active tab. ThereadText()orwriteText()promise will reject and you'll be annoyed and be all like_"This is why I don't use brand-new APIs"_. The trick is to defer the call until you can click back into the tab.
+Ваш сайт больше не имеет доступа к буферу обмена, когда пользователь переключается на другую вкладку. Это большая мера предосторожности, но она связана с досадной проблемой отладки. Когда вы открываете DevTools в Chrome, сам DevTools становится активной вкладкой. Обещание readText() или writeText () будет отклонено, и вы будете раздражены и будете все как _«Вот почему я не использую совершенно новые API»_. Хитрость заключается в том, чтобы отложить вызов, пока вы не сможете вернуться на вкладку.
 
 index.js
 
@@ -148,17 +148,17 @@ setTimeout(async () => {
 }, 4000);
 ```
 
-This isn't much better, but it'll work. This quirk isn't the only drawback of the Async Clipboard API.
+Это не намного лучше, но это сработает. Эта особенность - не единственный недостаток Async Clipboard API.
 
-### The Async Clipboard API doesn't provide the user-selected text
+### Async Clipboard API не предоставляет выбранный пользователем текст
 
-Usingdocument.execCommand('copy')will automatically copy the user's selected text. If you need that functionality, you'll have to get the selected text yourself and pass it in towriteText(). That will require a combination of the[Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection), the[Range API](https://developer.mozilla.org/en-US/docs/Web/API/Range), and some DOM traversal. You'll have to deal with combining text nodes across a range of DOM elements, and that's not fun.
+Использование document.execCommand('copy') автоматически скопирует выбранный пользователем текст. Если вам нужна эта функциональность, вам придется получить выделенный текст самостоятельно и передать его в writeText(). Для этого потребуется сочетание [Selection API](https://developer.mozilla.org/en-US/docs/Web/API/Selection) и [Range API](https://developer.mozilla.org / en-US / docs / Web / API / Range) и некоторые обходы DOM. Вам придется иметь дело с объединением текстовых узлов в диапазоне элементов DOM, и это не весело.
 
-### Learn more about the Async Clipboard API
+### Узнайте больше об Async Clipboard API
 
-Jason Miller, who is a legend,[wrote an amazing article on the Async Clipboard API](https://developers.google.com/web/updates/2018/03/clipboardapi). It's basically the standard resource at the moment.
+Джейсон Миллер, который является легендой, [написал потрясающую статью об API-интерфейсе буфера обмена Async](https://developers.google.com/web/updates/2018/03/clipboardapi). Это в основном стандартный ресурс на данный момент.
 
-### Copy and paste responsibly
+### Скопируйте и вставьте ответственно
 
-Clipboard access is a great tool for user experience, but it has its thorns. Some users carry sensitive data and some users bring malicious data. Make sure you handle user's data responsibly and prepare yourself for those nasty paste events.
+Доступ к буферу обмена - отличный инструмент для взаимодействия с пользователем, но у него есть свои проблемы. Некоторые пользователи переносят конфиденциальные данные, а некоторые - вредоносные. Убедитесь, что вы обрабатываете данные пользователя ответственно и готовитесь к этим неприятным событиям вставки.
 
