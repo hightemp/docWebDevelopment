@@ -32,3 +32,7 @@ function extend(obj, src) {
     return obj;
 }
 ```
+
+
+**********
+[javascript](/tags/javascript.md)
