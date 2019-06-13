@@ -1,46 +1,42 @@
 # Понимание хуков(hooks) жизненного цикла Vue.js
 
-Lifecycle hooks are an important part of any serious component. You often need to know when your component is created, added to the DOM, updated, or destroyed. Lifecycle hooks are a window into how the library you’re using works behind-the-scenes, and as such tend to invoke feelings of trepidation or unease for newcomers.
+Крючки жизненного цикла являются важной частью любого серьезного компонента. Вам часто нужно знать, когда ваш компонент создается, добавляется в DOM, обновляется или уничтожается. Хуки жизненного цикла - это окно в то, как библиотека, которую вы используете, работает за кулисами и, как таковая, вызывает чувство трепета или беспокойства у новичков.
 
-Thankfully, it’s fairly easy to understand, as seen in this diagram. (Courtesy of [https://vuejs.org/](https://vuejs.org/).)
+К счастью, это довольно легко понять, как видно на этой диаграмме. (Предоставлено [https://vuejs.org/](https://vuejs.org/).)
 
 [![Vue.js Component Lifecycle Diagram](/images/b6749746ba4b05899f1e721a8084e572.png)](https://vuejs.org/v2/guide/instance.html)
 
-## [](https://alligator.io/vuejs/component-lifecycle/#creation-initialization)Creation (Initialization)
+## Создание (инициализация)
 
-_Creation hooks_are the very first hooks that run in your component. They allow you to perform actions before your component has even been added to the DOM. Unlike any of the other hooks, creation hooks are also run during server-side rendering.
+_Creation hooks_ - самые первые ловушки, которые запускаются в вашем компоненте. Они позволяют выполнять действия еще до того, как ваш компонент был добавлен в DOM. В отличие от любых других хуков, хуки создания также запускаются во время рендеринга на стороне сервера.
 
-Use creation hooks if you need to set things up in your component both during client rendering and server rendering. You will not have access to the DOM or the target mounting element (_this.$el_) inside of creation hooks.
+Используйте ловушки создания, если вам нужно настроить компоненты в компоненте как во время рендеринга клиента, так и рендеринга сервера. У вас не будет доступа к DOM или целевому элементу монтирования (_this.$el_) внутри хуков создания.
 
 ### beforeCreate
 
-The _beforeCreate_ hook runs at the very initialization of your component._data_ has not been made reactive, and_events_have not been set up yet.
+Хук _beforeCreate_ запускается при самой инициализации вашего компонента. Данные не были реактивными, а событие еще не настроено.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 export default {
   beforeCreate() {
     console.log('Nothing gets called before me!')
   }
 }
-</script>
-
 ```
 
 ### created
 
-In the_created_hook, you will be able to access reactive _data_ and _events_ are active. Templates and Virtual DOM have not yet been mounted or rendered.
+В ловушке _created_ вы сможете получить доступ к реактивным _data_ и _events_ активны. Шаблоны и Virtual DOM еще не были смонтированы или отображены.
 
-Example:
+Пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -60,21 +56,19 @@ export default {
     console.log('propertyComputed will update, as this.property is now reactive.')
   }
 }
-</script>
-
 ```
 
-## [](https://alligator.io/vuejs/component-lifecycle/#mounting-dom-insertion)Mounting (DOM Insertion)
+## Монтаж (вставка DOM)
 
-_Mounting hooks_ are often the most-used hooks, for better or worse. They allow you to access your component immediately before and after the first render. They do not, however, run during server-side rendering.
+«Крепежные крючки»(mounting hooks) часто являются наиболее часто используемыми крючками, в лучшую или в худшую сторону. Они позволяют вам получить доступ к вашему компоненту непосредственно до и после первого рендера. Однако они не работают во время рендеринга на стороне сервера.
 
-Use if: You need to access or modify the DOM of your component immediately before or after the initial render.
+Используйте if: Вам нужно получить доступ или изменить DOM вашего компонента непосредственно перед или после первоначального рендеринга.
 
-Do **not** use if: You need to fetch some data for your component on initialization. Use _created_(or _created_ + _activated_ for _keep-alive_ components) for this instead, especially if you need that data during server-side rendering.
+**не** использовать, если: Вам нужно получить некоторые данные для вашего компонента при инициализации. Вместо этого используйте _created_ (или _created_ + _activation_ для _keep-alive_ компонентов) для этого, особенно если вам нужны эти данные во время рендеринга на стороне сервера.
 
 ### beforeMount
 
-The _beforeMount_ hook runs right before the initial render happens and after the template or render functions have been compiled. Most likely you’ll never need to use this hook. Remember, it doesn’t get called when doing server-side rendering.
+Хук _beforeMount_ запускается непосредственно до того, как произойдет начальный рендеринг, и после компиляции шаблона или функций рендеринга. Скорее всего, вам никогда не понадобится этот крючок. Помните, это не вызывается при выполнении рендеринга на стороне сервера.
 
 Example:
 
