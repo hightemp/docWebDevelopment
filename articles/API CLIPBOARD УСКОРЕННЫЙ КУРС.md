@@ -28,15 +28,15 @@ const result = document.executeCommand('copy');
 
 Без некоторых документов вы не можете просто указать, какой текст **вы** хотите добавить в буфер обмена. И вы, конечно, не можете просто получить доступ к тому, что когда-либо было в буфере обмена в то время. Есть некоторые правила, которым вы должны следовать.
 
-### The rules of Clipboard access with executeCommand('copy')
+### Правила доступа к буферу обмена с executeCommand('copy')
 
-If you want to copy text withdocument.execCommand('copy'):
+Если вы хотите скопировать текст withdocument.execCommand ('copy'):
 
-1.  The content must live in the DOM.
-2.  The user needs to trigger the event (Firefox)
-3.  The copied text is the user-selected text
+1. Контент должен жить в DOM.
+2. Пользователь должен вызвать событие (Firefox)
+3. Скопированный текст является выбранным пользователем текстом
 
-Chrome doesn't require a user-triggered event, but it is required in Firefox.
+Chrome не требует запускаемого пользователем события, но требуется в Firefox.
 
 index.js
 
@@ -47,7 +47,7 @@ button.addEventListener('click', event => {
 });
 ```
 
-What if you want to copy text that's not in the DOM?**You can inject it.**
+Что если вы хотите скопировать текст, которого нет в DOM? **Вы можете ввести его.**
 
 index.js
 
@@ -64,11 +64,11 @@ button.addEventListener('click', event => {
 });
 ```
 
-If your text isn't in the DOM, then make it in the DOM. The snippet above creates ainputelement, adds it to the DOM, inserts the text into the element, focuses it, selects it, and then finally copies it.
+Если ваш текст не в DOM, то сделайте это в DOM. Приведенный выше фрагмент создает элемент ввода, добавляет его в DOM, вставляет текст в элемент, фокусирует его, выделяет и, наконец, копирует.
 
-**What happens if you don't add the child to the DOM like in** document.body.appendChild(input)? The text isn't copied. It can't just be a detached DOM node, it needs to be in the DOM.
+**Что произойдет, если вы не добавите дочерний элемент в DOM, как в** document.body.appendChild (input)? Текст не скопирован. Это не может быть просто отдельный узел DOM, он должен быть в DOM.
 
-If you want to read directly from the clipboard withdocument.execCommand('paste'), you can't. It doesn't work on Chrome, Firefox, Edge, or IE. To get data off the Clipboard you must listen to thepasteevent. (Which isn't supported in IE. The IE clipboard story is also strange. It's a property on the window and requires permission, but let's not get into that).
+Если вы хотите читать напрямую из буфера обмена с помощью document.execCommand('paste'), вы не можете. Это не работает на Chrome, Firefox, Edge или IE. Чтобы получить данные из буфера обмена, вы должны прослушать событие вставки. (Что не поддерживается в IE. История с буфером обмена IE также странная. Это свойство окна и требует разрешения, но давайте не будем вдаваться в подробности).
 
 index.js
 
