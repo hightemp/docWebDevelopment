@@ -230,3 +230,4 @@ export default {
 
 **********
 [Vue](/tags/Vue.md)
+[hooks](/tags/hooks.md)
