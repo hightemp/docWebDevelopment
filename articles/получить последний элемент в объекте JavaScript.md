@@ -20,3 +20,6 @@ var temp = { 'a' : 'apple', 'b' : 'banana', 'c' : 'carrot' };
 var { [Object.keys(temp).pop()]: lastItem } = temp;
 console.info(lastItem); //"carrot"
 ```
+
+**********
+[javascript](/tags/javascript.md)
