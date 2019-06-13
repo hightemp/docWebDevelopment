@@ -7,3 +7,6 @@
 [javascript](/tags/javascript.md)
 [KnockoutJS](/tags/KnockoutJS.md)
 [object](/tags/object.md)
+[PHP](/tags/PHP.md)
+[PHPWord](/tags/PHPWord.md)
+[PHPOffice](/tags/PHPOffice.md)
