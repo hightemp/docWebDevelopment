@@ -7,3 +7,6 @@
 ```
 
 Если вы используете Chrome для разработки, есть действительно отличное расширение (с которым я не связан), называемое [Knockoutjs context debugger](https://chrome.google.com/webstore/detail/knockoutjs-context-debugg/ oddcpmchholgcjgjdnfjmildmlielhof), который показывает контекст привязки непосредственно на панели «Инструменты разработчика».
+
+**********
+[javascript](/tags/javascript.md)
