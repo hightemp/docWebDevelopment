@@ -70,19 +70,16 @@ export default {
 
 Хук _beforeMount_ запускается непосредственно до того, как произойдет начальный рендеринг, и после компиляции шаблона или функций рендеринга. Скорее всего, вам никогда не понадобится этот крючок. Помните, это не вызывается при выполнении рендеринга на стороне сервера.
 
-Example:
+пример:
 
 ExampleComponent.vue
 
-```
-<script>
+```javascript
 export default {
   beforeMount() {
     console.log(`this.$el doesn't exist yet, but it will soon!`)
   }
 }
-</script>
-
 ```
 
 ### mounted
