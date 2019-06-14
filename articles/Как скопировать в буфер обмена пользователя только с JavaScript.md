@@ -25,23 +25,23 @@ API буфера обмена состоит из нескольких API. Но
 
  **Давайте посмотрим на некоторые примеры.** 
 
-This won’t really stop people from copying your text, but it shows how it overrides the initial value.
+Это действительно не остановит людей от копирования вашего текста, но показывает, как оно переопределяет первоначальное значение.
 
-In the above example all you have to do is add an eventListener to the copy event. The event that you receive contains `clipboardData` and its three methods: `setData` , `getData` , and `clearData` .
+В приведенном выше примере все, что вам нужно сделать, это добавить eventListener к событию копирования. Полученное событие содержит `clipboardData` и его три метода:` setData`, `getData` и` clearData`.
 
-It actually has all methods and properties of the [DataTransfer](https://html.spec.whatwg.org/multipage/interaction.html#datatransfer) object. So you can inspect the properties, `items` and `types` in case you are not sure what arguments to use for `setData` or `getData` .
+На самом деле он имеет все методы и свойства объекта [DataTransfer](https://html.spec.whatwg.org/multipage/interaction.html#datatransfer). Таким образом, вы можете проверить свойства `items` и` types`, если вы не уверены, какие аргументы использовать для `setData` или` getData`.
 
-Don’t let the user paste into the confirmation input, or don’t let them paste their own password.
+Не позволяйте пользователю вставлять в поле ввода подтверждения или не позволяйте ему вставлять свой собственный пароль.
 
-This example shows what it would look like to not allow a user to paste text into an input with the ID of “passwordConfirmation”. It also doesn’t allow them to paste “theUserPassword” into any field (we’re pretending that’s actually their password. Please ignore for a moment that you should never have the user’s password available in plain text in your web app.).
+В этом примере показано, как будет выглядеть, если пользователь не сможет вставить текст во входные данные с идентификатором «passwordConfirmation». Это также не позволяет им вставлять « theUserPassword» в любое поле (мы притворяемся, что это фактически их пароль. Пожалуйста, на мгновение не обращайте внимания на то, что у вас никогда не должно быть пароля пользователя открытым текст в вашем веб-приложении.)
 
-Another example could be a profanity filter if you are creating a web app that expects young users.
+Другим примером может быть фильтр ненормативной лексики, если вы создаете веб-приложение, которое ожидает молодых пользователей.
 
-You could go on to use the value retrieved from `getData` elsewhere in your app. As an example, maybe you need to log when data is pasted, like in a test-taking app. Sometime’s pasting text in that setting could be OK, but you may want to be able to go back later and ensure the pasted content wasn’t copied from elsewhere.
+Вы можете продолжить использовать значение, полученное из `getData` в другом месте вашего приложения. В качестве примера, возможно, вам нужно войти в систему, когда данные вставлены, как в тестовом приложении. Иногда вставка текста в этом параметре может быть в порядке, но вы можете захотеть вернуться позже и убедиться, что вставленное содержимое не было скопировано из другого места.
 
 * * *
 
-### Creating your own copy event.
+### Создание собственной копии мероприятия.
 
 > Copying text to the clipboard shouldn’t be hard. It shouldn’t require dozens of steps to configure or hundreds of KBs to load. But most of all, it shouldn’t depend on Flash or any bloated framework. —  [clipboardjs.com](https://clipboardjs.com/ "https://clipboardjs.com/") 
 
