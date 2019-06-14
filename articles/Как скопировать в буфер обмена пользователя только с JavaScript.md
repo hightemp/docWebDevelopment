@@ -43,15 +43,15 @@ API буфера обмена состоит из нескольких API. Но
 
 ### Создание собственной копии мероприятия.
 
-> Copying text to the clipboard shouldn’t be hard. It shouldn’t require dozens of steps to configure or hundreds of KBs to load. But most of all, it shouldn’t depend on Flash or any bloated framework. —  [clipboardjs.com](https://clipboardjs.com/ "https://clipboardjs.com/") 
+> Копирование текста в буфер обмена не должно быть трудным. Не требуется десятков шагов для настройки или сотен килобайт для загрузки. Но, прежде всего, это не должно зависеть от Flash или любого раздутого фреймворка. - [clipboardjs.com](https://clipboardjs.com/ "https://clipboardjs.com/" )
 
-Before we get into this, I’d like to introduce you to an open source project that simplifies everything I’m about to show you. It’s called “clipboard.js” and it allows you to easily copy text to your clipboard. You may find it easier than doing this on your own. It’s quite a small library, and has a very simple API.
+Прежде чем мы углубимся в это, я хотел бы представить вам проект с открытым исходным кодом, который упрощает все, что я собираюсь показать вам. Он называется «clipboard.js» и позволяет легко копировать текст в буфер обмена. Возможно, вам будет проще, чем делать это самостоятельно. Это довольно маленькая библиотека с очень простым API.
 
-But we’re here to learn, so lets look at how you can copy text to the user’s clipboard using only Web APIs.
+Но мы здесь, чтобы учиться, поэтому давайте посмотрим, как вы можете копировать текст в буфер обмена пользователя, используя только веб-API.
 
-Since the `ClipboardEvent` object isn’t exposed in most browsers, we must go a different route. To accomplish this we’ll need to add to our tools, `document.execCommand()` . This will allow us to run a `copy` command that copies that current selection to the keyboard.
+Поскольку объект `ClipboardEvent` не доступен в большинстве браузеров, мы должны пойти другим путем. Для этого нам необходимо добавить в наши инструменты `document.execCommand ()`. Это позволит нам выполнить команду `copy`, которая копирует текущий выбор на клавиатуру.
 
-Here’s an example shown with CodePen:
+Вот пример, показанный с CodePen:
 
 ```html
 <button onclick='copyText("Copied!")'>  Click me to copy!</button>
@@ -89,13 +89,13 @@ function copyText (text) {
 }
 ```
 
-This must be triggered by a user event, like a click. This is a safety feature implemented on important operations, such as opening the file upload window, copying to a clipboard, etc. It helps to keep users safe from websites interacting with their computer when they don’t them want to.
+Это должно быть вызвано пользовательским событием, например щелчком. Это функция безопасности, реализованная в важных операциях, таких как открытие окна загрузки файла, копирование в буфер обмена и т. Д. Она помогает защитить пользователей от веб-сайтов, взаимодействующих с их компьютером, когда они этого не хотят.
 
-A few notes:
+Несколько заметок:
 
-*   You can use either an `input` with the type attribute set to text, or a `textarea` . With the latter requiring one less line of code in order to create it.
-*   You may read that `document.execCommand` requires `designmode` , but as far as I can tell this is not true. It just needs to be triggered by a user initiated event.
-*   You probably want to wrap `document.execCommand` in a try/catch block. In some browsers it will throw an error on failures.
-*   You can inspect the result of `execCommand` to see if it worked or not. It returns a Boolean that relates to the success of the command.
+* Вы можете использовать либо `input` с атрибутом type, установленным в text, либо` textarea`. Для последнего требуется на одну строку кода меньше, чтобы его создать.
+* Вы можете прочитать, что для `document.execCommand` требуется` designmode`, но, насколько я могу судить, это не так. Это только должно быть вызвано инициированным пользователем событием.
+* Вы, вероятно, хотите обернуть `document.execCommand` в блок try / catch. В некоторых браузерах выдает ошибку при сбоях.
+* Вы можете проверить результат `execCommand`, чтобы увидеть, работает он или нет. Возвращает логическое значение, которое относится к успешному выполнению команды.
 
-And that’s it! You’re now successfully copying text to your clipboard!
+И это все! Теперь вы успешно копируете текст в буфер обмена!
