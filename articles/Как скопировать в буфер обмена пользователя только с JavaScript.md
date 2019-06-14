@@ -1,29 +1,29 @@
 # Как скопировать в буфер обмена пользователя только с JavaScript 
 
-### I need to be honest, this isn’t really one API.
+### Мне нужно быть честным, это действительно не один API.
 
-The clipboard API is made up of multiple API’s. But more than that, we’re going to need to pull in some more Web API’s that don’t directly relate to the clipboard and its utilities in order to completely take full advantage of the browser’s clipboard abilities. By the end you should have several new tools that make it easier to work with text on your websites and apps!
+API буфера обмена состоит из нескольких API. Но более того, нам нужно задействовать еще несколько веб-API, которые напрямую не связаны с буфером обмена и его утилитами, чтобы полностью использовать все возможности браузера в буфере обмена. , К концу у вас должно появиться несколько новых инструментов, облегчающих работу с текстом на ваших сайтах и ​​в приложениях!
 
 * * *
 
-####  **Starting small: ClipboardEvent** 
+####  **Начиная с малого: ClipboardEvent** 
 
-The clipboard event is the easiest to use, and is technically created through the [real clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/ClipboardEvent) , but here’s the dilemma: the clipboard API isn’t exposed in most web browsers. So you can only get to it through event handlers on the `copy` , `cut` , and `paste` events.
+Событие буфера обмена является самым простым в использовании и технически создается с помощью [реального API буфера обмена](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/ClipboardEvent), но здесь Дилемма: API-интерфейс буфера обмена не раскрывается в большинстве веб-браузеров. Таким образом, вы можете получить доступ к нему только через обработчики событий для событий `copy`,` cut` и `paste`.
 
-This means you can modify what is happening during those events. Your code can change both what eventually ends up on the user’s clipboard, and what ends up showing on the screen. However, you can’t create your own event, [except in Firefox](http://caniuse.com/#search=clipboardevent) .
+Это означает, что вы можете изменить то, что происходит во время этих событий. Ваш код может изменить как то, что в конечном итоге попадает в буфер обмена пользователя, так и то, что в итоге отображается на экране. Однако вы не можете создать свое собственное событие, [кроме Firefox](http://caniuse.com/#search=clipboardevent).
 
- **So.. What can we even do under these constraints?** 
+ **Итак ... Что мы можем даже сделать при этих ограничениях?** 
 
-As it turns out, plenty!
+Как оказалось, много!
 
-I can think of a few reasons to modify these events and I’ll give examples below.
+Я могу придумать несколько причин для изменения этих событий, и я приведу примеры ниже.
 
-*   Add or remove something from a copied or cut text.
-*   Obtain the data that was pasted and use it elsewhere in your app.
+* Добавить или удалить что-то из скопированного или вырезанного текста.
+* Получить данные, которые были вставлены и использовать его в другом месте в вашем приложении.
 
-That’s not necessarily a _lot_ , but with some extra API juice we can enhance our abilities. More on that later.
+Это не обязательно _lot_, но с некоторым дополнительным соком API мы можем улучшить наши возможности. Подробнее об этом позже.
 
- **Lets take a look at some examples.** 
+ **Давайте посмотрим на некоторые примеры.** 
 
 This won’t really stop people from copying your text, but it shows how it overrides the initial value.
 
