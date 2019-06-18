@@ -20,7 +20,7 @@ As of KO 2.1, the second and third arguments are passed through to `JSON.stringi
 ```json
 {
   "title": "Some items",
-  "items": \[
+  "items": [
     {
       "description": "one",
       "price": 0
@@ -33,7 +33,7 @@ As of KO 2.1, the second and third arguments are passed through to `JSON.stringi
       "description": "three",
       "price": 0
     }
-  \],
+  ],
   "titleUpper": "SOME ITEMS"
 }
 ```
