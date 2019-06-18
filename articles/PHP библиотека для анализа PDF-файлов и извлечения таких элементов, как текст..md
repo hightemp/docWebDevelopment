@@ -28,3 +28,6 @@
  [Прочитайте документацию на веб-сайте](http://www.pdfparser.org/documentation?utm_source=GitHub&utm_medium=documentation&utm_campaign=GitHub).
 
 Исходные файлы PDF References можно загрузить с этого URL: [http://www.adobe.com/devnet/pdf/pdf\_reference\_archive.html(http://www.adobe.com/devnet/pdf/pdf_reference_archive .html)
+
+**********
+[PHP](/tags/PHP.md)
