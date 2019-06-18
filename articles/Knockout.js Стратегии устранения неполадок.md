@@ -299,3 +299,4 @@ Note that not all browsers respect the `toString` function, but it certainly hel
 
 **********
 [KnockoutJS](/tags/KnockoutJS.md)
+[javascript](/tags/javascript.md)
