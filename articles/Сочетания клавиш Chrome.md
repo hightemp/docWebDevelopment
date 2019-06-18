@@ -54,3 +54,6 @@ The following shortcuts require you to use your mouse:
 
   
  **Note:**   If you're using the TalkBack screen reader on an Android device with an external keyboard, you can use   [TalkBack keyboard shortcuts](https://support.google.com/accessibility/android/answer/6110948)   to navigate web pages.
+
+**********
+[Chrome](/tags/Chrome.md)
