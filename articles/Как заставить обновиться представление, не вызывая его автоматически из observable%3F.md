@@ -6,3 +6,6 @@
 ko.cleanNode(document.getElementById(element_id))
 ko.applyBindings(viewModel, document.getElementById(element_id))
 ```
+
+**********
+[KnockoutJS](/tags/KnockoutJS.md)
