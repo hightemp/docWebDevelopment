@@ -675,3 +675,4 @@ class QueryType extends ObjectType
 
 **********
 [PHP](/tags/PHP.md)
+[GraphQL](/tags/GraphQL.md)
