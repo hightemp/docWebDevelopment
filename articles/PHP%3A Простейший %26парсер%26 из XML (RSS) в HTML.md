@@ -17,3 +17,4 @@ foreach ($xml->xpath('//item') as $item)
 
 **********
 [PHP](/tags/PHP.md)
+[RSS](/tags/RSS.md)
