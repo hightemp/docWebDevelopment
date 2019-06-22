@@ -118,3 +118,4 @@ curl.cainfo=c:\php\cacert.pem
 
 **********
 [PHP](/tags/PHP.md)
+[CURL](/tags/CURL.md)
