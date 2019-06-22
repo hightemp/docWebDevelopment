@@ -40,3 +40,4 @@
 [SimpleXML](/tags/SimpleXML.md)
 [XML](/tags/XML.md)
 [PHP](/tags/PHP.md)
+[CURL](/tags/CURL.md)
