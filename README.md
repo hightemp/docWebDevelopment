@@ -36,6 +36,6 @@
 [Telegram](/tags/Telegram.md)
 [flex](/tags/flex.md)
 [PHP](/tags/PHP.md)
-[SimpleXML](/tags/SimpleXML.md)
 [XML](/tags/XML.md)
 [RSS](/tags/RSS.md)
+[SimpleXML](/tags/SimpleXML.md)
