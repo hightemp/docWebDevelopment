@@ -2,7 +2,7 @@
 
 ## Процедурный
 
-```
+```php
 // установить поля сообщения
 $post = [
     'username' => 'user1',
@@ -26,7 +26,7 @@ var_dump($response);
 
 ## Объектно-ориентированный
 
-```
+```php
 <?php
 
 // с учетом соответствующих изменений
@@ -82,7 +82,7 @@ class CurlPost
 
 ### использование
 
-```
+```php
 // создать объект curl
 $curl = new \MyApp\Http\CurlPost('http://www.example.com');
 
