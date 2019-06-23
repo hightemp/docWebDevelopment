@@ -16,7 +16,8 @@ fs.writeFile('test.json', JSON.stringify({ a:1, b:2, c:3 }, null, 4));
 
 ```
 
-См. [JSON.stringify() документы в MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify), [Node fs docs](https: //nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+См. [JSON.stringify() документы в MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify), [Node fs docs](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+
 
 **********
 [javascript](/tags/javascript.md)
