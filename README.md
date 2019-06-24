@@ -44,3 +44,4 @@
 [SimpleXML](/tags/SimpleXML.md)
 [XML](/tags/XML.md)
 [node.js](/tags/node.js.md)
+[cache](/tags/cache.md)
