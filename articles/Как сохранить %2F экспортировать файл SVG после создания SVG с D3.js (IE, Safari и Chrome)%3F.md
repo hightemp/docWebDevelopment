@@ -10,7 +10,7 @@
 
 * * *
 
-```
+```javascript
 //get svg element.
 var svg = document.getElementById("svg");
 
