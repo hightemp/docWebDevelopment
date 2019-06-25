@@ -36,3 +36,6 @@ var url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
 document.getElementById("link").href = url;
 //you can download svg file by right click menu.
 ```
+
+**********
+[SVG](/tags/SVG.md)
