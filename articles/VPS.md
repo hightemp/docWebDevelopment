@@ -18,3 +18,6 @@ https://ru.kamatera.com
 ## hostinger.ru
 
 https://www.hostinger.ru
+
+**********
+[VPS](/tags/VPS.md)
