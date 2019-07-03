@@ -10,3 +10,7 @@ https://www.hostsbook.com
 ## fornex.com
 
 https://fornex.com
+
+## kamatera.com
+
+https://ru.kamatera.com
