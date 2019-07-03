@@ -48,3 +48,6 @@ if ($order === 'price') {
 
 return $query->paginate(20);
 ```
+
+**********
+[Eloquent](/tags/Eloquent.md)
