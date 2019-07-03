@@ -14,3 +14,7 @@ https://fornex.com
 ## kamatera.com
 
 https://ru.kamatera.com
+
+## hostinger.ru
+
+https://www.hostinger.ru
