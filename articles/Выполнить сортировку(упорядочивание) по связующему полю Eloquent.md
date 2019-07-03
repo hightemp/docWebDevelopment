@@ -50,5 +50,5 @@ return $query->paginate(20);
 ```
 
 **********
-[Eloquent](/tags/Eloquent.md)
 [PHP](/tags/PHP.md)
+[Eloquent](/tags/Eloquent.md)
