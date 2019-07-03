@@ -6,3 +6,7 @@
 ## hostsbook
 
 https://www.hostsbook.com
+
+## fornex.com
+
+https://fornex.com
