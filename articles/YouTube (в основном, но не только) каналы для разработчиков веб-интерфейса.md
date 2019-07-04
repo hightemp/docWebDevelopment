@@ -4,25 +4,9 @@
 
 Не стесняйтесь сделать запрос на удаление с отсутствующим каналом.
 
-* [English](#user-content-english)
-  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings)
-* [Russian](#user-content--russian)
-  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-1)
-* [French](#user-content--french)
-* [Arabic](#user-content--arabic)
-* [Portuguese](#user-content--portuguese)
-* [Czech](#user-content--czech)
-* [Hebrew](#user-content--hebrew)
-  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-2)
-* [Polish](#user-content--polish)
-  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-3)
-* [Dutch](#user-content--dutch)
-  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-4)
-* [Spanish](#user-content--spanish)
-* [Live coding streams](#user-content--live-coding-streams)
 
 
-## English
+## английский
 
 *    [Google Developers](http://www.youtube.com/user/GoogleDevelopers) — tools, events recordings
 *    [funfunfunction](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q) — JavaScript, ES6, functional programming, programming practices
@@ -94,7 +78,7 @@
 *    [Up & Running Tutorials](https://www.youtube.com/channel/UCrebROsxqMJJFN5uxoG1f2Q) \- React, Gatsby
 *    [CodyHouse](https://www.youtube.com/channel/UCQhxjJcgCwDW_2JqlDBsWtA) \- CSS, Sass, tutorials, screencasts
 
-###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings) Conferences and meetups recordings
+###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings) Записи конференций и встреч
 
 *    [Confreaks](https://www.youtube.com/channel/UCWnPjmqvljcafA0z2U1fwKQ) 
 *    [Nordic.js](https://www.youtube.com/user/nordicjs) 
@@ -149,7 +133,7 @@
 *    [ReactiveConf](https://www.youtube.com/channel/UCBHdUnixTWymmXBIw12Y8Qg) 
 *    [React Day Berlin](https://www.youtube.com/channel/UC1EYHmQYBUJjkmL6OtK4rlw) 
 
-##  [](https://github.com/andrew--r/channels#russian) Russian
+##  [](https://github.com/andrew--r/channels#russian) русский
 
 *    [Sorax](http://www.youtube.com/user/ArtSorax) — основы CSS и JavaScript, обзоры инструментов, подкасты
 *    [Hexlet](https://www.youtube.com/user/HexletUniversity) \- курсы по Computer Science, введение в JavaScript, вебинары, подкаст об информатике
@@ -198,7 +182,7 @@
 *    [Vladilen Minin](https://www.youtube.com/c/VladilenMinin)  — Vue.js, React, Svelte
 *    [webDev](https://www.youtube.com/channel/UCE9ODjNIkOHrnSdkYWLfYhg)  — React, GraphQL, Vue, скринкасты, разборы сайтов
 
-###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-1) Conferences and meetups recordings
+###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-1) Записи конференций и встреч
 
 *    [Яндекс.Фронтенд](https://www.youtube.com/channel/UCMtlICYxr6Dz_PG9_SVqRYQ) (+ лекции Школы разработки интерфейсов)
 *    [Веб-стандарты](http://www.youtube.com/user/wstdays) 
@@ -243,15 +227,15 @@
 *    [JS NN](https://www.youtube.com/channel/UC4OQwFvLMPVFTqb0hyqknSw) 
 *    [TverIO](https://www.youtube.com/channel/UCl5UjDgC4_SOjiLnIRznkEg/) 
 
-##  [](https://github.com/andrew--r/channels#french) French
+##  [](https://github.com/andrew--r/channels#french) Французский
 
 *    [Grafikart](https://www.youtube.com/channel/UCj_iGliGCkLcHSZ8eqVNPDQ) — HTML, CSS, JavaScript, NodeJS
 
-##  [](https://github.com/andrew--r/channels#arabic) Arabic
+##  [](https://github.com/andrew--r/channels#arabic) арабский
 
 *    [Elzero Web School](https://www.youtube.com/user/OsamaElzero/) \- HTML, CSS, Sass, JavaScript, jQuery, PHP, Ajax, Bootstrap, MySQL, WordPress.
 
-##  [](https://github.com/andrew--r/channels#portuguese) Portuguese
+##  [](https://github.com/andrew--r/channels#portuguese) португальский
 
 *    [WebSchool](https://www.youtube.com/channel/UCKdo1RaF8gzfhvkOdZv_ojg) — MEAN (MongoDB, Express, Angular, Node.js), PostCSS, Sass, Koa, Git
 *    [BrazilJS](https://www.youtube.com/user/BrazilJS) — conferences recordings (BrazilJS, FrontInPOA, FrontInSM, RSJS), weekly podcast about JavaScript
@@ -264,15 +248,15 @@
 *    [Curso em Vídeo](https://www.youtube.com/user/cursosemvideo/) — HTML
 *    [Tony França](https://www.youtube.com/channel/UCOnW_nxKxwXOS-KPuv2YEKA) — Vue.js, Angular
 
-##  [](https://github.com/andrew--r/channels#czech) Czech
+##  [](https://github.com/andrew--r/channels#czech) чешский язык
 
 *    [Frontendisti.cz](https://www.youtube.com/user/frontendisti) — HTML, CSS, Front-end
 
-##  [](https://github.com/andrew--r/channels#hebrew) Hebrew
+##  [](https://github.com/andrew--r/channels#hebrew) иврит
 
 *    [GoCode Sderot](https://www.youtube.com/c/GoCodeSderot) — Full-Stack course (HTML, CSS, Javascript, Vue.js, Node.js) with presentations & live coding
 
-###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-2) Conferences and meetups recordings
+###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-2) Записи конференций и встреч
 
 *    [AngularJS Israel](https://www.youtube.com/user/AngularJSIL) 
 *    [ReactIL](https://www.youtube.com/channel/UC7AkWgJFP_hBoU0M7_n0prQ) 
@@ -280,26 +264,26 @@
 *    [GDG Israel](https://www.youtube.com/user/GTUGIsrael) 
 *    [FullStack Developer Israel](https://www.youtube.com/channel/UCV7lV9Lq2sc7t0QEKS4xH7A) 
 
-##  [](https://github.com/andrew--r/channels#polish) Polish
+##  [](https://github.com/andrew--r/channels#polish) польский
 
 *    [Pasja informatyki](https://www.youtube.com/user/MiroslawZelent) — HTML, CSS, JavaScript
 *    [Adrian Bienias](https://www.youtube.com/user/ADRIANBIENIASpl) — CSS, JavaScript, tools
 *    [Od zera do WebDeva](https://www.youtube.com/channel/UCrSxel4Mheo6XA8IPMA-3ZQ) — Angular2
 
-###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-3) Conferences and meetups recordings
+###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-3) Записи конференций и встреч
 
 *    [WarsawJS](https://www.youtube.com/channel/UCzYf3wdKSKnR5lvkRVUyCYg) 
 
-##  [](https://github.com/andrew--r/channels#dutch) Dutch
+##  [](https://github.com/andrew--r/channels#dutch) Голландский
 
-###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-4) Conferences and meetups recordings
+###  [](https://github.com/andrew--r/channels#conferences-and-meetups-recordings-4) Записи конференций и встреч
 
 *    [Fronteers](https://fronteers.nl/videos) — HTML, CSS, JavaScript
 
-##  [](https://github.com/andrew--r/channels#spanish) Spanish
+##  [](https://github.com/andrew--r/channels#spanish) испанский
 
 *    [NodersJS](https://www.youtube.com/channel/UC7tUsO3S7424TMcgSCUOCow/) — Node.js, spanish meetups recordings
 
-##  [](https://github.com/andrew--r/channels#live-coding-streams) Live coding streams
+##  [](https://github.com/andrew--r/channels#live-coding-streams) Живые потоки кодирования
 
 *    [noopkat on Twitch](https://www.twitch.tv/noopkat) : open source JavaScript/Node.js
