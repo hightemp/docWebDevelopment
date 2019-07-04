@@ -1,8 +1,26 @@
-# YouTube (mostly, but not only) channels for frontend developers
+# YouTube (в основном, но не только) каналы для разработчиков веб-интерфейса
 
-A collection of useful YouTube channels and other videos sources for javascript developers and web designers.
+Коллекция полезных каналов YouTube и других источников видео для разработчиков javascript и веб-дизайнеров.
 
-Feel free to make a pull request with missing channel.
+Не стесняйтесь сделать запрос на удаление с отсутствующим каналом.
+
+* [English](#user-content-english)
+  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings)
+* [Russian](#user-content--russian)
+  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-1)
+* [French](#user-content--french)
+* [Arabic](#user-content--arabic)
+* [Portuguese](#user-content--portuguese)
+* [Czech](#user-content--czech)
+* [Hebrew](#user-content--hebrew)
+  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-2)
+* [Polish](#user-content--polish)
+  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-3)
+* [Dutch](#user-content--dutch)
+  * [Conferences and meetups recordings](#user-content--conferences-and-meetups-recordings-4)
+* [Spanish](#user-content--spanish)
+* [Live coding streams](#user-content--live-coding-streams)
+
 
 ## English
 
