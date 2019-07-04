@@ -2,6 +2,30 @@
 
  What happens behind the scenes when we type google.com in a browser?
  
+* [Google's 'g' key is pressed](#user-content-googles-g-key-is-pressed)
+* [When you hit 'Enter'](#user-content--when-you-hit-enter)
+* [Parse the URL](#user-content--parse-the-url)
+* [Check HSTS list](#user-content--check-hsts-list)
+* [DNS lookup](#user-content--dns-lookup)
+* [Opening of a socket + TLS handshake](#user-content--opening-of-a-socket--tls-handshake)
+* [HTTP protocol](#user-content--http-protocol)
+* [HTTP Server Request Handle](#user-content--http-server-request-handle)
+* [Server Response](#user-content--server-response)
+* [Behind the scenes of the Browser](#user-content--behind-the-scenes-of-the-browser)
+* [The browser's high level structure](#user-content--the-browsers-high-level-structure)
+* [Rendering Engine](#user-content--rendering-engine)
+* [The Main flow](#user-content--the-main-flow)
+* [Parsing Basics](#user-content--parsing-basics)
+* [DOM Tree](#user-content--dom-tree)
+  * [Why is the DOM slow?](#user-content--why-is-the-dom-slow)
+* [Render Tree](#user-content--render-tree)
+* [Render tree's relation to the DOM tree](#user-content--render-trees-relation-to-the-dom-tree)
+* [CSS Parsing](#user-content--css-parsing)
+* [Layout](#user-content--layout)
+* [Painting](#user-content--painting)
+* [Trivia](#user-content--trivia)
+* [The birth of the web](#user-content--the-birth-of-the-web)
+
  ## Google's 'g' key is pressed
 
 When you just press "g" the browser receives the event and the entire auto-complete machinery kicks into high gear. Depending on your browser's algorithm and if you are in private/incognito mode or not various suggestions will be presented to you in the dropbox below the URL bar. Most of these algorithms prioritize results based on search history and bookmarks. You are going to type "google.com" so none of it matters, but a lot of code will run before you get there and the suggestions will be refined with each key press. It may even suggest "google.com" before you type it.
