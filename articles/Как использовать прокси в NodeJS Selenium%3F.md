@@ -1,6 +1,6 @@
 # Как использовать прокси в NodeJS Selenium?
 
-```
+```javascript
 const { Builder } =  require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
@@ -16,6 +16,7 @@ const driver = new Builder()
 driver.get('http://whatismyip.host/')
   .then(() => console.log('DONE'))
 ```
+
 
 **********
 [node.js](/tags/node.js.md)
