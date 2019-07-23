@@ -21,4 +21,3 @@ driver.get('http://whatismyip.host/')
 **********
 [node.js](/tags/node.js.md)
 [Selenium](/tags/Selenium.md)
-[proxy](/tags/proxy.md)
