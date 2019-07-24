@@ -22,23 +22,27 @@ JavaScript has had modules for a long time. However, they were implemented via l
 
 Before now, it was impossible to directly reference or include one JavaScript file in another, as such, developers therefore resorted to alternative options like multiple HTML script tags
 
- \<script src="app.js"></script>  
-\<script src="search.js"></script>  
-\<script src="user.js"></script>  
-\<script>  
+```html
+<script src="app.js"></script>  
+<script src="search.js"></script>  
+<script src="user.js"></script>  
+<script>  
 console.log('inline code');  
-\</script> 
+</script> 
+```
 
 This is a bad practice as each script initiates a new HTTP request, which affects page performance and disrupts further processing while it runs.
 
 Let's say we have a file, `app.js` and included in this file is a function which checks every limit in a number and returns if it’s EVEN or ODD.
 
+```javascript
  function showNumbers(limit) {  
- _for_  (let i = 0; i <= limit; i++) {  
-const message = (i % 2 === 0) ? 'EVEN' : 'ODD';  
-console.log(i, message);  
+	 for  (let i = 0; i <= limit; i++) {  
+		const message = (i % 2 === 0) ? 'EVEN' : 'ODD';  
+		console.log(i, message);  
   }  
 } 
+```
 
 Now this function is only available within `app.js` . Wherever you need this function, you have to either rewrite the function or attach the script again.
 
@@ -75,10 +79,12 @@ ES6 modules is a very powerful concept, although support is not available everyw
 *   Exposed modules are called into other modules using `import` 
 *   Modules must be included in your HTML with `type="module"` , which can be an inline or external script tag.
 
- \<script  **type="module"**  src="main.js"></script>  
-\<script  **type="module"** \>  
+```html
+<script  **type="module"**  src="main.js"></script>  
+<script  **type="module"**>  
   // or an inline script  
-\</script> 
+</script> 
+```
 
 *   Modules are [deferred](https://developer.mozilla.org/en/docs/Web/HTML/Element/script?source=post_page---------------------------#attr-defer) , and only run after a document is loaded
 
@@ -92,21 +98,42 @@ For this article, let's create three files, ( `app.js` , `math.js` and `max.js` 
 
 In `math.js` , let's write a basic arithmetic algorithm
 
- let sumAll = (a, b) => {return a + b;}  let subtractAll = (a, b) => {return a - b;}  let divideAll = (a, b) => {return a / b;}  let multiplyAll = (a, b) => {return a \* b;}  let findModulus = (a, b) => {return a % b;} 
+```javascript
+ let sumAll = (a, b) => {return a + b;}  
+ let subtractAll = (a, b) => {return a - b;}  
+ let divideAll = (a, b) => {return a / b;}  
+ let multiplyAll = (a, b) => {return a * b;}  
+ let findModulus = (a, b) => {return a % b;} 
+```
 
 Now to make this module accessible to other parts of our code, we need to ` **export** ` them. There are several ways of doing this;
 
 *   You can export each module individually:
 
- export let sumAll = (a, b) => {return a + b;}  export let subtractAll = (a, b) => {return a - b;}  export let divideAll = (a, b) => {return a / b;}  export let multiplyAll = (a, b) => {return a \* b;}  export let findModulus = (a, b) => {return a % b;} 
+```javascript
+ export let sumAll = (a, b) => {return a + b;}  
+ export let subtractAll = (a, b) => {return a - b;} 
+ export let divideAll = (a, b) => {return a / b;}  
+ export let multiplyAll = (a, b) => {return a * b;}  
+ export let findModulus = (a, b) => {return a % b;} 
+```
 
 *   A better way is to use a single export statement.
 
- let sumAll = (a, b) => {return a + b;}  let subtractAll = (a, b) => {return a - b;}  let divideAll = (a, b) => {return a / b;}  let multiplyAll = (a, b) => {return a \* b;}  let findModulus = (a, b) => {return a % b;}  export {sumAll, subtractAll, divideAll, multiplyAll, findModulus}; 
+```javascript
+ let sumAll = (a, b) => {return a + b;}  
+ let subtractAll = (a, b) => {return a - b;}  
+ let divideAll = (a, b) => {return a / b;}  
+ let multiplyAll = (a, b) => {return a * b;}  
+ let findModulus = (a, b) => {return a % b;}  
+ export {sumAll, subtractAll, divideAll, multiplyAll, findModulus}; 
+```
 
 *   You can also export default values
 
+```javascript
  export default {sumAll, subtractAll, multiplyAll, divideAll}; 
+```
 
 >  **Note:** You only export modules you want to use in other parts of your code, its not mandatory for you to export every module in this script
 
@@ -114,25 +141,39 @@ Now to use our exported modules, we need to import them in `app.js` There are se
 
 *   You can import individually
 
+```javascript
  import {sumAll} from './math.js'; 
+```
 
 Let's test our import
 
+```javascript
  console.log(sumAll(9, 8)); //17 
+```
 
 *   You can import multiple modules at once:
 
- import {sumAll, subtractAll, divideAll}  _from_  './math.js'; 
+```javascript
+ import {sumAll, subtractAll, divideAll}  from  './math.js'; 
+```
 
 *   You can import modules as aliases
 
 > In some computer operating systems and **programming** languages, an **alias** is an alternative and usually easier-to-understand or more significant name for a defined data object. More details [here](https://searchmicroservices.techtarget.com/definition/alias?source=post_page---------------------------) 
 
-  _import_  \*  _as_  math  _from_  './math.js'; 
+```javascript
+  import  *  as  math  from  './math.js'; 
+```
 
 Here we have imported all the modules in `math.js` and assigned them to the alias `math` . To use this imported module we do this:
 
- console.log(math.sumAll(50, 10)); // 60  console.log(math.subtractAll(50, 10)); // 40  console.log(math.multiplyAll(50, 10)); // 500  console.log(math.divideAll(50, 10)); // 5  console.log(math.findModulus(50, 15)); // 5 
+```javascript
+ console.log(math.sumAll(50, 10)); // 60  
+ console.log(math.subtractAll(50, 10)); // 40  
+ console.log(math.multiplyAll(50, 10)); // 500  
+ console.log(math.divideAll(50, 10)); // 5  
+ console.log(math.findModulus(50, 15)); // 5 
+```
 
 *   You can also import default values
 
@@ -157,22 +198,32 @@ To use this method, you must export `sumAll()` as `default`
 
 > Modules are imported with either absolute or Relative references and must start with either “/”, “./”, or “../”.
 
- import {sumAll} from 'math.js'; ❌  
+```javascript
+import {sumAll} from 'math.js'; ❌  
 import {sumAll} from 'lib/max.js'; ❌  import {sumAll} from './math.js'; ✔️  
 import {sumAll} from '../max.js'; ✔️  
 import {sumAll} from 'https://bolaji-module.glitch.me/sumAll.js'; ✔️ 
+```
 
 *   You can import several modules from different files, in our `max.js` add this:
 
- let max = (a, b) => {  
- _return_  (a > b) ? a : b;  
+```javascript
+let max = (a, b) => {  
+	 return  (a > b) ? a : b;  
 }  
 export {max}; 
+```
 
 Now you can import `max.js` and `math.js` together in `app.js` 
 
-  _import_  \*  _as_  math  _from_  './math.js';  
-import {max} from './max.js';  console.log(max(50, 10)); // 50  console.log(math.subtractAll(50, 10)); // 40  console.log(math.multiplyAll(50, 10)); // 500  console.log(math.divideAll(50, 10)); // 5 
+```javascript
+import  *  as  math  from  './math.js';  
+import {max} from './max.js';  
+console.log(max(50, 10)); // 50  
+console.log(math.subtractAll(50, 10)); // 40  
+console.log(math.multiplyAll(50, 10)); // 500  
+console.log(math.divideAll(50, 10)); // 5 
+```
 
 > You can import multiple files but we must also remember that having more than a few modules is going to reduce our app’s performance , only use modules when needed.
 
