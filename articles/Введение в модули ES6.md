@@ -201,3 +201,6 @@ You should also know that **ES6 modules are not supported in all browsers.** For
 > Subscribe to my newsletter [here](https://tinyletter.com/bolajiayodeji/?source=post_page---------------------------) and get notified when it drops!
 
 So this it, while you await the **‘Babel transpiler article’** practice all you learnt from this article, use it in different projects and try all methods explained to get a better grasp of ES6 modules.
+
+**********
+[ES6](/tags/ES6.md)
