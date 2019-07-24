@@ -4,7 +4,7 @@ An essential aspect of software engineering is **efficiency.** Every successful 
 
 In this article, I would introduce you to ES6 modules, what they are, how to use them and why you should care {0\[\]0}
 
-#  **What exactly is a module?** 
+# What exactly is a module? 
 
 In JavaScript, the word **“modules”** refers to small units of independent, reusable code. They are the foundation of many JavaScript design patterns and are critically necessary when building any substantial JavaScript-based application.
 
