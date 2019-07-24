@@ -255,3 +255,4 @@ So this it, while you await the **‘Babel transpiler article’** practice all 
 
 **********
 [ES6](/tags/ES6.md)
+[javascript](/tags/javascript.md)
