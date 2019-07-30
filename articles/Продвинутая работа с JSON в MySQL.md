@@ -6,7 +6,7 @@
 
 Набор данных в формате JSON, используемый в данной статье, можно скачать [на Гитхабе](https://github.com/compose-ex/mysql-json-indexing-generated-columns) . Он содержит список игроков со следующими элементами: идентификатор игрока, его имя и игры, в которые он играл (Battlefield, Crazy Tennis и Puzzler).
 
-```
+```json
 {
     "id":1,
     "name":"Sally",
@@ -34,7 +34,7 @@
 
   
 
-```
+```SQL
 CREATE TABLE `players` (  
     `id` INT UNSIGNED NOT NULL,
     `player_and_games` JSON NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `players` (
 
   
 
-```
+```SQL
 `column_name` datatype GENERATED ALWAYS AS (expression)
 ```
 
@@ -74,7 +74,7 @@ CREATE TABLE `players` (
 
   
 
-```
+```SQL
 `names_virtual` VARCHAR(20) GENERATED ALWAYS AS ...
 ```
 
@@ -84,7 +84,7 @@ Cоздаем столбец с именем `names_virtual` длиной до 2
 
   
 
-```
+```SQL
 `names_virtual` VARCHAR(20) GENERATED ALWAYS AS (`player_and_games` ->> '$.name')
 ```
 
@@ -98,7 +98,7 @@ Cоздаем столбец с именем `names_virtual` длиной до 2
 
   
 
-```
+```SQL
 [VIRTUAL|STORED] [UNIQUE [KEY]] [[NOT] NULL] [[PRIMARY] KEY]
 ```
 
@@ -124,7 +124,7 @@ Cоздаем столбец с именем `names_virtual` длиной до 2
 
   
 
-```
+```SQL
 CREATE TABLE `players` (  
    `id` INT UNSIGNED NOT NULL,
    `player_and_games` JSON NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE `players` (
 
   
 
-```
+```SQL
 INSERT INTO `players` (`id`, `player_and_games`) VALUES (1, '{  
     "id": 1,  
     "name": "Sally",
@@ -178,7 +178,7 @@ INSERT INTO `players` (`id`, `player_and_games`) VALUES (1, '{
 
   
 
-```
+```SQL
 SHOW COLUMNS FROM `players`;
 
 +------------------+------------------+------+-----+---------+-------------------+
@@ -200,7 +200,7 @@ SHOW COLUMNS FROM `players`;
 
   
 
-```
+```SQL
 ALTER TABLE `players` ADD COLUMN `battlefield_level_virtual` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.games_played.Battlefield.level') NOT NULL AFTER `names_virtual`;  
 ALTER TABLE `players` ADD COLUMN `tennis_won_virtual` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.games_played."Crazy Tennis".won') NOT NULL AFTER `battlefield_level_virtual`;  
 ALTER TABLE `players` ADD COLUMN `tennis_lost_virtual` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.games_played."Crazy Tennis".lost') NOT NULL AFTER `tennis_won_virtual`;  
@@ -253,7 +253,7 @@ ALTER TABLE `players` ADD COLUMN `times_virtual` INT GENERATED ALWAYS AS (`playe
 
   
 
-```
+```SQL
 EXPLAIN SELECT * FROM `players` WHERE `names_virtual` = "Sally"\G  
 *************************** 1. row ***************************
            id: 1
@@ -276,7 +276,7 @@ possible_keys: NULL
 
   
 
-```
+```SQL
 CREATE INDEX `names_idx` ON `players`(`names_virtual`);  
 ```
 
@@ -286,7 +286,7 @@ CREATE INDEX `names_idx` ON `players`(`names_virtual`);
 
   
 
-```
+```SQL
 EXPLAIN SELECT * FROM `players` WHERE `names_virtual` = "Sally"\G  
 *************************** 1. row ***************************
            id: 1
@@ -309,7 +309,7 @@ possible_keys: names_idx
 
   
 
-```
+```SQL
 CREATE INDEX `times_idx` ON `players`(`times_virtual`);  
 CREATE INDEX `won_idx` ON `players`(`tennis_won_virtual`);  
 CREATE INDEX `lost_idx` ON `players`(`tennis_lost_virtual`);  
@@ -333,7 +333,7 @@ CREATE INDEX `level_idx` ON `players`(`battlefield_level_virtual`);
 
   
 
-```
+```SQL
 SELECT `id`, `names_virtual`, `tennis_won_virtual`, `battlefield_level_virtual`, `times_virtual` FROM `players` WHERE (`battlefield_level_virtual` > 50 AND  `tennis_won_virtual` > 50) ORDER BY `times_virtual` ASC;
 
 +----+---------------+--------------------+---------------------------+---------------+
@@ -394,7 +394,7 @@ possible_keys: won_idx,level_idx
 
   
 
-```
+```SQL
 `id` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.id') STORED NOT NULL,
 ```
 
@@ -404,7 +404,7 @@ possible_keys: won_idx,level_idx
 
   
 
-```
+```SQL
 CREATE TABLE `players_two` (  
     `id` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.id') STORED NOT NULL,
     `player_and_games` JSON NOT NULL,
@@ -428,7 +428,7 @@ CREATE TABLE `players_two` (
 
   
 
-```
+```SQL
 INSERT INTO `players_two` (`player_and_games`) VALUES ('{  
     "id": 1,  
     "name": "Sally",  
@@ -443,7 +443,7 @@ INSERT INTO `players_two` (`player_and_games`) VALUES ('{
 
   
 
-```
+```SQL
 SHOW COLUMNS FROM `players_two`;
 
 +---------------------------+-------------+------+-----+---------+-------------------+
@@ -485,7 +485,7 @@ ERROR 3098 (HY000): The table does not comply with the requirements by an extern
 
   
 
-```
+```SQL
 ALTER TABLE `players_two` ADD COLUMN `id` INT GENERATED ALWAYS AS (`player_and_games` ->> '$.id') STORED PRIMARY KEY;  
 ```
 
@@ -495,4 +495,7 @@ ALTER TABLE `players_two` ADD COLUMN `id` INT GENERATED ALWAYS AS (`player_and_g
 
   
 
-В статье показано как эффективно хранить данные JSON в MySQL, а так же как создавать индексы благодаря генерируемым столбцам. Использование генерируемых столбцов позволит размещать индексы по определенным элементам данных JSON. Именно эта гибкость делает MySQL очень привлекательной для использования JSON.[MySQL](/tags/MySQL.md)
+В статье показано как эффективно хранить данные JSON в MySQL, а так же как создавать индексы благодаря генерируемым столбцам. Использование генерируемых столбцов позволит размещать индексы по определенным элементам данных JSON. Именно эта гибкость делает MySQL очень привлекательной для использования JSON.
+
+**********
+[MySQL](/tags/MySQL.md)
