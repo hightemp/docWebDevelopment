@@ -499,3 +499,4 @@ ALTER TABLE `players_two` ADD COLUMN `id` INT GENERATED ALWAYS AS (`player_and_g
 
 **********
 [MySQL](/tags/MySQL.md)
+[JSON](/tags/JSON.md)
