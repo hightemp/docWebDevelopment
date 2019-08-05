@@ -32,7 +32,7 @@ Orientation ( `'portrait'` , `'landscape'` ) is optional and defaults to `'portr
 
 A repeating page header and footer can also be added via the header and footer property. These can be provided as an object that contains a `height` and a `contents` property. The contents property must be set as a phantom.callback object.
 
-```javscript
+```javascript
 header: {
   height: "1.2cm",
   contents: phantom.callback(function(pageNum, numPages) {
@@ -46,7 +46,7 @@ header: {
 
 The given object should be in _either_ this format:
 
-```javscript
+```javascript
 {
   width: '200px',
   height: '300px',
@@ -57,7 +57,7 @@ The given object should be in _either_ this format:
 
 or this format:
 
-```javscript
+```javascript
 {
   format: 'A4',
   orientation: 'portrait',
@@ -68,7 +68,7 @@ or this format:
 
 ## Examples
 
-```javscript
+```javascript
 var webPage = require('webpage');
 var page = webPage.create();
 
@@ -85,7 +85,7 @@ page.paperSize = {
 
 A repeating page `header` and `footer` can also be added via this property, as in [this example](https://github.com/ariya/phantomjs/blob/master/examples/printheaderfooter.js) :
 
-```javscript
+```javascript
 var webPage = require('webpage');
 var page = webPage.create();
 
