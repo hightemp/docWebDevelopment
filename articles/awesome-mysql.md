@@ -225,3 +225,6 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 ## Newsletters
 
  _Newsletters require an email address, by definition. List below are newsletters that require nothing but an email address_
+
+**********
+[MySQL](/tags/MySQL.md)
