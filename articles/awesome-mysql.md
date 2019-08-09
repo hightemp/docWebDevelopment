@@ -4,7 +4,7 @@ A curated list of awesome MySQL free and opensource software, libraries and reso
 
 This list accepts and encourages pull requests. See [CONTRIBUTING](https://github.com/shlomi-noach/awesome-mysql/blob/master/CONTRIBUTING.md) 
 
-### Contents
+## Contents
 
 * [Analysis](#user-content-analysis)
   * [Backup](#user-content-backup)
