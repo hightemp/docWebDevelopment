@@ -6,27 +6,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 
 ### Contents
 
-* [Analysis](#user-content-analysis)
-* [Benchmarking](#user-content-benchmarking)
-* [Binlog-Replication](#user-content-binlog-replication)
-* [ChatOps](#user-content-chatops)
-* [Configuration](#user-content-configuration)
-* [Connectors](#user-content-connectors)
-* [Deployment](#user-content-deployment)
-* [Development](#user-content-development)
-* [GUI](#user-content-gui)
-* [HA](#user-content-ha)
-* [Proxy](#user-content-proxy)
-* [Replication](#user-content-replication)
-* [Schema](#user-content-schema)
-* [Security](#user-content-security)
-* [Server](#user-content-server)
-* [Sharding](#user-content-sharding)
-* [Toolkits](#user-content-toolkits)
-* [Conferences](#user-content-conferences)
-* [e-books](#user-content-e-books)
-* [Media](#user-content-media)
-* [Newsletters](#user-content-newsletters)
+
 
 ## Analysis
 
@@ -42,7 +22,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Prometheus](https://prometheus.io/) / [mysqld\_exporter](https://github.com/prometheus/mysqld_exporter) \- Time series database for real-time monitoring and alerting.
 *    [pstop](https://github.com/sjmudd/ps-top) \- a top-like program for MySQL, collecting, aggregating and displaying information from performance\_schema.
     
-    ## Backup
+### Backup
     
 
  _Backup/restore/recovery tools_ 
@@ -51,7 +31,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [MySQLDumper](http://www.mysqldumper.net/) \- open-source web based backup tool - useful for shared webhosting
 *    [Percona Xtrabackup](http://www.percona.com/doc/percona-xtrabackup) \- an open-source hot backup utility for MySQL - based servers that doesn’t lock your database during the backup.
 
-## Benchmarking
+### Benchmarking
 
  _Tools to stress your servers_ 
 
@@ -59,24 +39,24 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Sysbench](https://github.com/akopytov/sysbench) \- a modular, cross-platform and multi-threaded benchmark tool.
 *    [TPCC-MySQL](https://code.launchpad.net/~percona-dev/perconatools/tpcc-mysql) \- A port of the popular [TPCC](http://www.tpc.org/tpcc/) benchmark for MySQL.
 
-## Binlog-Replication
+### Binlog-Replication
 
 *    [Kingbus](https://github.com/flike/kingbus) \- A distributed MySQL binlog storage system built on Raft
 *    [mysql-ripple](https://github.com/google/mysql-ripple) \- Ripple, a server that can serve as a middleman in MySQL replication
 
-## ChatOps
+### ChatOps
 
  _Scripts integrated into chat rooms_ 
 
 *    [Hubot MySQL ChatOps](https://github.com/samlambert/hubot-mysql-chatops) 
 
-## Configuration
+### Configuration
 
  _MySQL sample configuration and advisors_ 
 
 *    [mysql-compatibility-config](https://github.com/morgo/mysql-compatibility-config) \- make MySQL configuration behave more like newer (or older) releases of MySQL.
 
-## Connectors
+### Connectors
 
  _MySQL connectors for various programming languages_ 
 
@@ -97,14 +77,14 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [PyMySQL](https://github.com/PyMySQL/PyMySQL) \- MySQL database connector for Python.
 *    [Ruby Mysql2 gem](https://github.com/brianmario/mysql2) \- MySQL driver for Ruby and Rails projects.
 
-## Deployment
+### Deployment
 
  _MySQL deployment tools_ 
 
 *    [MySQL Docker](https://hub.docker.com/_/mysql/) \- Official Docker images.
 *    [dbdeployer](https://www.dbdeployer.com/) \- A tool that installs one or more MySQL servers within seconds, easily, securely, and with full control.
 
-## Development
+### Development
 
  _Tools to support MySQL-related development_ 
 
@@ -114,7 +94,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Shift](https://github.com/square/shift) \- An application that helps you run schema migrations on MySQL databases
 *    [Test database](https://github.com/datacharmer/test_db) \- A sample MySQL database with an integrated test suite, used to test applications and servers
 
-## GUI
+### GUI
 
  _GUI frontends & applications_ 
 
@@ -132,7 +112,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [DBeaver](https://github.com/dbeaver/dbeaver) \- A cross-platform SQL and NoSQL database client.
 *    [OmniDB/OmniDB: Web tool for database management](https://github.com/OmniDB/OmniDB) 
 
-## HA
+### HA
 
  _High availability solutions_ 
 
@@ -142,7 +122,7 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Percona Replication Manager](https://github.com/percona/percona-pacemaker-agents/) \- Asynchronous MySQL replication manager agent for Pacemaker. Supports file and GTID based replication, geo-distributed clusters using booth.
 *    [replication-manager](https://github.com/signal18/replication-manager) \- a high availability solution to manage MariaDB 10.x and MySQL & Percona Server 5.7 GTID replication topologies.
 
-## Proxy
+### Proxy
 
  _Proxies to MySQL_ 
 
@@ -152,24 +132,24 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [ProxySQL](https://github.com/renecannao/proxysql) \- High performance proxy for MySQL.
 *    [MySQL Router](https://dev.mysql.com/doc/mysql-router/en/) \- MySQL Router is part of InnoDB cluster, and is a lightweight middleware that provides transparent routing between your application and back-end MySQL Servers.
 
-## Replication
+### Replication
 
  _Replication related software_ 
 
-## Schema
+### Schema
 
  _Add-on schemas_ 
 
 *    [common\_schema](https://github.com/shlomi-noach/common_schema) \- DBA’s framework for MySQL, providing a function library, views library and QueryScript interpreter.
 *    [sys](https://github.com/mysql/mysql-sys) \- A collection of views, functions and procedures to help MySQL administrators get insight in to MySQL Database usage.
 
-## Security
+### Security
 
  _Tools that prevents leaking of sensitive data from database (encryption, masking and tokenization, honey-pots, etc)_ 
 
 *    [Acra](https://github.com/cossacklabs/acra) \- SQL database protection suite: strong selective encryption, SQL injections prevention, intrusion detection system.
 
-## Server
+### Server
 
  _MySQL server flavors_ 
 
@@ -178,14 +158,14 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Percona Server](https://launchpad.net/percona-server) \- An enhanced, drop-in MySQL replacement.
 *    [TiDB](https://github.com/pingcap/tidb) \- A distributed HTAP database compatible with the MySQL protocol.
 
-## Sharding
+### Sharding
 
  _Sharding solutions/frameworks_ 
 
 *    [jetpants](https://github.com/tumblr/jetpants) \- An automation suite for managing large range sharding clusters, by Tumblr.
 *    [vitess](https://github.com/vitessio/vitess) \- vitess provides servers and tools which facilitate scaling of MySQL databases for large scale web services.
 
-## Toolkits
+### Toolkits
 
  _Toolkits, general purpose scripts_ 
 
@@ -196,11 +176,11 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Percona Toolkit](https://www.percona.com/software/mysql-tools/percona-toolkit) \- a collection of advanced command-line tools to perform a variety of MySQL server and system tasks that are too difficult or complex to perform manually.
 *    [UnDROP](https://bitbucket.org/Marc-T/undrop-for-innodb) \- a tool to recover data from dropped or corrupted InnoDB tables.
 
-# Resources
+## Resources
 
  _At this stage “resources” will not include websites, blogs, slides, presentation videos, etc. in fear of list size_ 
 
-## Conferences
+### Conferences
 
  _Public, recurring conferences on and around MySQL_ 
 
@@ -209,17 +189,17 @@ This list accepts and encourages pull requests. See [CONTRIBUTING](https://githu
 *    [Percona Live](https://www.percona.com/live/conferences) \- MySQL & Openstack focused conference.
 *    [SCALE](https://www.socallinuxexpo.org/) \- A community organized Linux and Open Source conference held annually in Southern California. The local MySQL community runs a track under the name MySQL Community Day.
 
-## e-books
+### e-books
 
  _e-books as well as relevant materials on and around MySQL_ 
 
 *    [SQL-exercise](https://github.com/XD-DENG/SQL-exercise) \- contains several SQL exercises, including the schema description figure, SQL code to build schema, questions and solutions in SQL. Based on wikibook [SQL Exercises](https://en.wikibooks.org/wiki/SQL_Exercises) .
 
-## Media
+### Media
 
  _Public, ongoing video & audio casts. This excludes conference presentations in fear of list size_ 
 
-## Newsletters
+### Newsletters
 
  _Newsletters require an email address, by definition. List below are newsletters that require nothing but an email address_
 
