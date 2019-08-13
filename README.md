@@ -47,6 +47,7 @@
 * [Пробив информации. Osint-ресурсы.](/articles/%D0%9F%D1%80%D0%BE%D0%B1%D0%B8%D0%B2%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8.%20Osint-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B..md)
 * [phantomjs - paperSize](/articles/phantomjs%20-%20paperSize.md)
 * [awesome-mysql](/articles/awesome-mysql.md)
+* [Node.js multithreading: What are Worker Threads and why do they matter?](/articles/Node.js%20multithreading%3A%20What%20are%20Worker%20Threads%20and%20why%20do%20they%20matter%3F.md)
 ---
 [javascript](/tags/javascript.md)
 [KnockoutJS](/tags/KnockoutJS.md)
