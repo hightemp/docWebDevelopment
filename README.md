@@ -91,3 +91,4 @@
 [ES6](/tags/ES6.md)
 [JSON](/tags/JSON.md)
 [phantomjs](/tags/phantomjs.md)
+[web workers](/tags/web%20workers.md)
