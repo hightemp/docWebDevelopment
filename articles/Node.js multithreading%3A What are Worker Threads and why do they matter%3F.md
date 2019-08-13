@@ -232,3 +232,6 @@ Maybe you have heard of Web workers. They are a more mature API **for the web** 
 ### Conclusion
 
 Worker threads is a promising experimental module if you need to do CPU-intensive tasks in your Node.js application. It’s like threads without shared memory and thus, without the potential race conditions they introduce. Since it’s still experimental I would wait before using it and I would just use [worker-farm](https://www.npmjs.com/package/worker-farm) (or similar modules) to do background processing. In the future, your program should be easy to migrate to worker threads once they are mature enough!
+
+**********
+[javascript](/tags/javascript.md)
