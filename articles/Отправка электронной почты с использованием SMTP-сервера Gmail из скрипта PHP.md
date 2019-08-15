@@ -28,30 +28,35 @@ Open your PHP file where you need to write a code for emails. For instance, we a
 
  **sendemail.php** 
 
-\<?php
+```php
+<?php
 //Import PHPMailer classes into the global namespace
-use PHPMailer\\PHPMailer\\PHPMailer;
-use PHPMailer\\PHPMailer\\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require\_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 ?>
+```
 
 In the above code, we have included the environment of the PHPMailer library in our file. Next, for sending emails using PHPMailer we need to pass Gmail SMTP server address, SMTP port for Gmail and SMTP authentication(which is nothing but your username and password of a Google account).
 
+```php
 $mail->isSMTP();
 $mail->Host = 'smtp.googlemail.com';  //gmail SMTP server
 $mail->SMTPAuth = true;
-$mail->Username = 'GMAIL\_USERNAME';   //username
-$mail->Password = 'GMAIL\_PASSWORD';   //password
+$mail->Username = 'GMAIL_USERNAME';   //username
+$mail->Password = 'GMAIL_PASSWORD';   //password
 $mail->SMTPSecure = 'ssl';
 $mail->Port = 465;                    //SMTP port
+```
 
 We have setup our Gmail SMTP server settings. Now, we all good to go for sending an email to a user.
 
-$mail->setFrom('FROM\_EMAIL\_ADDRESS', 'FROM\_NAME');
-$mail->addAddress('RECEPIENT\_EMAIL\_ADDRESS', 'RECEPIENT\_NAME');
+```php
+$mail->setFrom('FROM_EMAIL_ADDRESS', 'FROM_NAME');
+$mail->addAddress('RECEPIENT_EMAIL_ADDRESS', 'RECEPIENT_NAME');
 
 $mail->isHTML(true);
 
@@ -60,25 +65,28 @@ $mail->Body    = '<b>Email Body</b>';
 
 $mail->send();
 echo 'Message has been sent';
+```
 
 ### Sending Attachments In An Email
 
 PHPMailer library provides a way for sending single or multiple attachments in an email. We all need to do is pass a directory path of our attachments to the method `addAttachment` .
 
-$mail->addAttachment(\_\_DIR\_\_ . '/attachment1.png');
-$mail->addAttachment(\_\_DIR\_\_ . '/attachment2.jpg');
+```php
+$mail->addAttachment(__DIR__ . '/attachment1.png');
+$mail->addAttachment(__DIR__ . '/attachment2.jpg');
+```
 
 Our final code is as follows.
 
  **sendemail.php** 
 
 ```php
-\<?php
-use PHPMailer\\PHPMailer\\PHPMailer;
-use PHPMailer\\PHPMailer\\Exception;
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require\_once "vendor/autoload.php";
-require\_once "constants.php";
+require_once "vendor/autoload.php";
+require_once "constants.php";
 
 $mail = new PHPMailer(true);
 
@@ -86,16 +94,16 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.googlemail.com';  //gmail SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = GMAIL\_USERNAME;   //username
-    $mail->Password = GMAIL\_PASSWORD;   //password
+    $mail->Username = GMAIL_USERNAME;   //username
+    $mail->Password = GMAIL_PASSWORD;   //password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;                    //smtp port
  
-    $mail->setFrom('FROM\_EMAIL\_ADDRESS', 'FROM\_NAME');
-    $mail->addAddress('RECEPIENT\_EMAIL\_ADDRESS', 'RECEPIENT\_NAME');
+    $mail->setFrom('FROM_EMAIL_ADDRESS', 'FROM_NAME');
+    $mail->addAddress('RECEPIENT_EMAIL_ADDRESS', 'RECEPIENT_NAME');
 
-    $mail->addAttachment(\_\_DIR\_\_ . '/attachment1.png');
-    $mail->addAttachment(\_\_DIR\_\_ . '/attachment2.png');
+    $mail->addAttachment(__DIR__ . '/attachment1.png');
+    $mail->addAttachment(__DIR__ . '/attachment2.png');
 
     $mail->isHTML(true);
     $mail->Subject = 'Email Subject';
