@@ -99,3 +99,4 @@
 [SMTP](/tags/SMTP.md)
 [GMail](/tags/GMail.md)
 [eval](/tags/eval.md)
+[Vuex](/tags/Vuex.md)
