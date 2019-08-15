@@ -553,3 +553,4 @@ Vuex делает работу с Vue намного проще и веселе�
 **********
 [javascript](/tags/javascript.md)
 [Vue](/tags/Vue.md)
+[Vuex](/tags/Vuex.md)
