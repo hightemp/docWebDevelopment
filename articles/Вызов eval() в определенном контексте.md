@@ -36,3 +36,4 @@
 
 **********
 [javascript](/tags/javascript.md)
+[eval](/tags/eval.md)
