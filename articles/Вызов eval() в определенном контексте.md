@@ -33,3 +33,6 @@
 ```
 
 [ `with` ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with) \- это неудачная попытка создания блочных областей внутри функций, вроде того, что [ES6 `let` ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) . (но не точно, открыть и прочитать ссылки ресурсов)
+
+**********
+[javascript](/tags/javascript.md)
