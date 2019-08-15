@@ -112,3 +112,6 @@ try {
 We hope you understand send email using Gmail SMTP server from a PHP script. You may also like our article [Sending Email Via Gmail SMTP Server In Laravel](https://artisansweb.net/sending-email-via-gmail-smtp-server-laravel) . If you have any questions or suggestions please leave a comment below.
 
 If you liked this article, then please subscribe to our [Youtube Channel](https://www.youtube.com/channel/UCosi8Kv8-EPLt5TBJLlsWJA?sub_confirmation=1) for video tutorials.
+
+**********
+[PHP](/tags/PHP.md)
