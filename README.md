@@ -104,3 +104,4 @@
 [V8](/tags/V8.md)
 [сборщик мусора](/tags/%D1%81%D0%B1%D0%BE%D1%80%D1%89%D0%B8%D0%BA%20%D0%BC%D1%83%D1%81%D0%BE%D1%80%D0%B0.md)
 [memory management](/tags/memory%20management.md)
+[garbage collector](/tags/garbage%20collector.md)
