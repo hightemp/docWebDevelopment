@@ -812,5 +812,5 @@ if (!json) {
  Контакты спикера Андрея Роенко:  [flapenguin.me](https://flapenguin.me/)  ,  [Twitter](https://twitter.com/fla_penguin)  ,  [GitHub](https://github.com/flapenguin)  .
 
 **********
-[garbage collector](/tags/garbage%20collector.md)
 [javascript](/tags/javascript.md)
+[garbage collector](/tags/garbage%20collector.md)
