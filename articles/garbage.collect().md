@@ -813,3 +813,4 @@ if (!json) {
 
 **********
 [garbage collector](/tags/garbage%20collector.md)
+[javascript](/tags/javascript.md)
