@@ -113,3 +113,6 @@ Accept-Ranges: none_
  [http://vimeo.com/13465839](http://vimeo.com/13465839)  — Видео по использованию (англ.).   
  [— Твиттер Джона Мазерли](http://twitter.com/achillean)   
  [— официальный user guide (англ.)](http://www.shodanhq.com/help)
+
+**********
+[shodan](/tags/shodan.md)
