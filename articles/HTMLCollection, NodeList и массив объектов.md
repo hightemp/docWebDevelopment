@@ -15,7 +15,7 @@ During the good jQuery days, you could just do `$('.divy')` or `$('#container').
 
 I was trying to do the same thing using the native DOM selector API and was in for a surprise
 
-```javscript
+```javascript
 const childDivs = document.querySelectorAll('.divy')
 
 Array.isArray(childDivs) //=> false  
@@ -24,7 +24,7 @@ childDivs.constructor.name //=> NodeList
 
 Okay let’s try one of the `getElementBy%` methods and check what is returned
 
-```javscript
+```javascript
 const childDivsAgain = document.getElementsByClassName('divy')
 
 Array.isArray(childDivs) //=> false  
@@ -45,7 +45,7 @@ HTML Collections are _always_ “in the DOM”, whereas a NodeList is a more gen
 
 Let’s test the specification with relevant code to understand more
 
-```javscript
+```javascript
 let parentDiv = document.getElementById('container')
 
 let nodeListDivs = document.querySelectorAll('.divy')  
@@ -71,7 +71,7 @@ But remember that neither `HTMLCollection` nor `NodeList` support the array prot
 
 I came to know about this difference, when I was trying to use the [dragula drag-n-drop](https://github.com/bevacqua/react-dragula) library to add selected components to the library
 
-```javscript
+```javascript
 let draggableLists = document.querySelectorAll('div.draggable')  
 dragula(draggableLists); //will not work
 ```
@@ -82,14 +82,14 @@ To convert the NodeList or HTMLCollection object to a javascript array, you can 
 
 #### Use Array.from method
 
-```javscript
+```javascript
 const nodelist = document.querySelectorAll(‘.divy’)  
 const divyArray = Array.from(nodelist)
 ```
 
 #### Use Array.prototype.slice
 
-```javscript
+```javascript
 const nodelist = document.querySelectorAll(‘.divy’)  
 const divyArray = Array.prototype.slice.call(nodelist)
 ```
@@ -98,13 +98,13 @@ const divyArray = Array.prototype.slice.call(nodelist)
 
 And I like this one. If you are using ES6, you can just use the spread operator
 
-```javscript
+```javascript
 const divyArray = […document.querySelectorAll(‘.divy’)]
 ```
 
 Now, let’s apply that to the dragula api to make it work
 
-```javscript
+```javascript
 dragula([...document.querySelectorAll('div.draggable')])
 ```
 
