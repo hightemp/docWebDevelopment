@@ -41,3 +41,6 @@ foo()
 ```
 
 Возвращает '28' и 'foo' соответственно.
+
+**********
+[javascript](/tags/javascript.md)
