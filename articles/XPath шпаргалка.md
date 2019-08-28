@@ -7,3 +7,4 @@
 **********
 [javascript](/tags/javascript.md)
 [HTML](/tags/HTML.md)
+[XML](/tags/XML.md)
