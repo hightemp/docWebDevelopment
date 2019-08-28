@@ -8,3 +8,4 @@
 [javascript](/tags/javascript.md)
 [XML](/tags/XML.md)
 [HTML](/tags/HTML.md)
+[PHP](/tags/PHP.md)
