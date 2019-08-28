@@ -109,3 +109,6 @@ dragula([...document.querySelectorAll('div.draggable')])
 ```
 
 So when do you really convert NodeList to an array? Well, it depends on your usecase. If you really want an iterator to the latest updated DOM at all times, you should use the `NodeList` or `HTMLCollection` as it is without converting it to an array.
+
+**********
+[javascript](/tags/javascript.md)
