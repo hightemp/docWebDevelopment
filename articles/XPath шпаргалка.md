@@ -228,3 +228,4 @@ self (.)            // indicates the context node itself. It can be abbreviated 
 [PHP](/tags/PHP.md)
 [XML](/tags/XML.md)
 [HTML](/tags/HTML.md)
+[xpath](/tags/xpath.md)
