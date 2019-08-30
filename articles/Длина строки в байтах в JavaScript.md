@@ -1,10 +1,10 @@
 # Длина строки в байтах в JavaScript
 
-For historical reference or where TextEncoder APIs are [still unavailable](https://caniuse.com/#feat=textencoder) .
+Для исторической справки или где API TextEncoder [все еще недоступны](https://caniuse.com/#feat=textencoder).
 
-If you know the character encoding, you can calculate it yourself though.
+Если вы знаете кодировку символов, вы можете вычислить ее самостоятельно.
 
- `encodeURIComponent` assumes UTF-8 as the character encoding, so if you need that encoding, you can do,
+ `encodeURIComponent` предполагает UTF-8 в качестве кодировки символов, поэтому, если вам нужна эта кодировка, вы можете сделать,
 
 ```javascript
 function lengthInUtf8Bytes(str) {
@@ -15,9 +15,9 @@ function lengthInUtf8Bytes(str) {
 
 ```
 
-This should work because of the way UTF-8 encodes multi-byte sequences. The first encoded byte always starts with either a high bit of zero for a single byte sequence, or a byte whose first hex digit is C, D, E, or F. The second and subsequent bytes are the ones whose first two bits are 10. Those are the extra bytes you want to count in UTF-8.
+Это должно работать из-за способа, которым UTF-8 кодирует многобайтовые последовательности. Первый кодированный байт всегда начинается либо с старшего бита нуля для одной последовательности байтов, либо с байта, чья первая шестнадцатеричная цифра - C, D, E или F. Второй и последующие байты - это те, чьи первые два бита равны 10 Это те дополнительные байты, которые вы хотите считать в UTF-8.
 
-The table in [wikipedia](http://en.wikipedia.org/wiki/UTF-8) makes it clearer
+Таблица в [wikipedia](http://en.wikipedia.org/wiki/UTF-8) проясняет ситуацию
 
 ```javascript
 Bits        Last code point Byte 1          Byte 2          Byte 3
@@ -28,7 +28,7 @@ Bits        Last code point Byte 1          Byte 2          Byte 3
 
 ```
 
-If instead you need to understand the page encoding, you can use this trick:
+Если вместо этого вам нужно понять кодировку страницы, вы можете использовать этот трюк:
 
 ```javascript
 function lengthInPageEncoding(s) {
