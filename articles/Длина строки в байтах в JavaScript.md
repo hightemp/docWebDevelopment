@@ -40,3 +40,6 @@ function lengthInPageEncoding(s) {
   return sEncoded.length - (m ? m.length * 2 : 0);
 }
 ```
+
+**********
+[javascript](/tags/javascript.md)
