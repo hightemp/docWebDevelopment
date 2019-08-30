@@ -6,7 +6,7 @@ If you know the character encoding, you can calculate it yourself though.
 
  `encodeURIComponent` assumes UTF-8 as the character encoding, so if you need that encoding, you can do,
 
-```
+```javascript
 function lengthInUtf8Bytes(str) {
   // Matches only the 10.. bytes that are non-initial characters in a multi-byte sequence.
   var m = encodeURIComponent(str).match(/%[89ABab]/g);
@@ -19,7 +19,7 @@ This should work because of the way UTF-8 encodes multi-byte sequences. The firs
 
 The table in [wikipedia](http://en.wikipedia.org/wiki/UTF-8) makes it clearer
 
-```
+```javascript
 Bits        Last code point Byte 1          Byte 2          Byte 3
   7         U+007F          0xxxxxxx
  11         U+07FF          110xxxxx        10xxxxxx
@@ -30,7 +30,7 @@ Bits        Last code point Byte 1          Byte 2          Byte 3
 
 If instead you need to understand the page encoding, you can use this trick:
 
-```
+```javascript
 function lengthInPageEncoding(s) {
   var a = document.createElement('A');
   a.href = '#' + s;
