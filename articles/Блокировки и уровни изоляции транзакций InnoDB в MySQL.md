@@ -91,3 +91,4 @@
 **********
 [MySQL](/tags/MySQL.md)
 [InnoDB](/tags/InnoDB.md)
+[блокировки](/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8.md)
