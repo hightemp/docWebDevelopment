@@ -47,3 +47,6 @@ SHOW VARIABLES LIKE '%tx_isolation%';
 ```SQL
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 ```
+
+**********
+[MySQL](/tags/MySQL.md)
