@@ -121,3 +121,4 @@
 [react](/tags/react.md)
 [xpath](/tags/xpath.md)
 [транзакции](/tags/%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8.md)
+[InnoDB](/tags/InnoDB.md)
